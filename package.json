@@ -1,17 +1,43 @@
 {
   "name": "portfolio-astro",
-  "type": "module",
   "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt . --write",
+    "type-check": "tsc --noEmit",
+    "release": "semantic-release",
+    "prune:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "prune:astro": "find . -name '.astro' -type d -prune -exec rm -rf '{}' +",
+    "prune:dist": "find . -name 'dist' -type d -prune -exec rm -rf '{}' +",
+    "prune:all": "bun run prune:node-modules && bun run prune:astro && bun run prune:dist"
   },
   "dependencies": {
     "astro": "^6.1.8"
-  }
+  },
+  "devDependencies": {
+    "@astrojs/ts-plugin": "^1.10.7",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.6",
+    "@semantic-release/npm": "^13.1.5",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "@unocss/astro": "^66.6.8",
+    "oxfmt": "^0.43.0",
+    "oxlint": "^1.58.0",
+    "semantic-release": "^25.0.3",
+    "typescript": "6.0.2",
+    "unocss": "^66.6.8"
+  },
+  "engines": {
+    "bun": "^1.3.10",
+    "node": ">=24.0.0"
+  },
+  "packageManager": "bun@1.3.10"
 }

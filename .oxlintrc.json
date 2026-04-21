@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "plugins": ["react", "jsx-a11y", "import", "nextjs"],
+  "rules": {
+    "typescript/consistent-type-imports": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/explicit-function-return-type": [
+      "error",
+      { "allowTypedFunctionExpressions": false }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          { "name": "clsx", "message": "Use 'clsx/lite' instead of 'clsx'" }
+        ],
+        "patterns": ["**/src/*", "**/index"]
+      }
+    ],
+    "react/require-render-return": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/exhaustive-deps": "error",
+    "react/rules-of-hooks": "error",
+    "eslint/no-unused-vars": "error"
+  },
+  "ignorePatterns": [
+    "node_modules/**",
+    ".next/**",
+    "out/**",
+    "dist/**",
+    "coverage/**",
+    "**/*.md",
+    "tailwind.config.ts",
+    "postcss.config.mjs",
+    "**/__mocks__/**",
+    "next.config.ts",
+    "eslint.config.mjs",
+    "oxlintrc.json"
+  ]
+}

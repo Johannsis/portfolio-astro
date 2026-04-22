@@ -1,17 +1,82 @@
 ---
+import AboutWidget from '@jh/components/organisms/AboutWidget.astro';
+import AuroraBackground from '../components/organisms/AuroraBackground.astro';
+import ContactLinksBehavior from '../components/organisms/ContactLinksBehavior.astro';
+import ExperienceCardsBehavior from '../components/organisms/ExperienceCardsBehavior.astro';
+import ExperienceWidget from '../components/organisms/ExperienceWidget.astro';
+import Footer from '../components/organisms/Footer.astro';
+import Header from '../components/organisms/Header.astro';
+import MouseLight from '../components/organisms/MouseLight.astro';
+import { pageSections, siteUrl, userData } from '../data/user';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+const currentYear = new Date().getFullYear();
+const title = 'Johannes Hoersch | Senior Front-End Developer';
+const description =
+	'Johannes Hoersch — Senior Front-End Developer based in Santo Domingo, DR. Building fast, accessible, and beautiful digital experiences with Next.js, React, and TypeScript.';
+const keywords = [
+	'Software Engineer',
+	'Front-End Developer',
+	'React',
+	'Next.js',
+	'TypeScript',
+	'Johannes Hoersch',
+];
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	jobTitle: 'Senior Front-End Developer',
+	name: 'Johannes Hoersch',
+	sameAs: [
+		'https://github.com/Johannsis',
+		'https://www.linkedin.com/in/johanneshoersch/',
+	],
+	url: siteUrl,
+	worksFor: {
+		'@type': 'Organization',
+		name: 'TelevisaUnivision',
+	},
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+	description={description}
+	jsonLd={jsonLd}
+	keywords={keywords}
+	siteName='Johannes Hoersch Portfolio'
+	siteUrl={siteUrl}
+	title={title}
+>
+	<AuroraBackground />
+
+	<div
+		class='text-primary-80 relative z-10 flex min-h-dvh w-full min-w-min grow flex-col px-6 py-12 transition-colors duration-500 ease-in-out md:px-12 lg:px-24'
+	>
+		<div
+			class='z-10 flex min-h-full max-w-7xl flex-col gap-6 self-center lg:flex-row'
+		>
+			<Header
+				job={userData.job}
+				location={userData.location}
+				motto={userData.motto}
+				name={userData.name}
+				pageSections={pageSections}
+				socialLinks={userData.social}
+			/>
+
+			<main
+				class='mx-auto my-0 flex w-full grow flex-col gap-16 py-0 lg:mr-0 lg:max-w-[calc(60%-0.75rem)]'
+			>
+				<AboutWidget />
+				<ExperienceWidget experience={userData.experience} />
+			</main>
+		</div>
+
+		<Footer currentYear={currentYear} />
+	</div>
+
+	<MouseLight />
+	<ContactLinksBehavior />
+	<ExperienceCardsBehavior />
+</BaseLayout>

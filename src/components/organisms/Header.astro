@@ -1,0 +1,35 @@
+---
+import type { SocialLink } from '../../data/user';
+import ContactLinks from '../molecules/ContactLinks.astro';
+import HeaderSections from '../molecules/HeaderSections.astro';
+
+interface Props {
+	job: string;
+	location: string;
+	motto: string;
+	name: string;
+	pageSections: readonly string[];
+	socialLinks: SocialLink[];
+}
+
+const { job, location, motto, name, pageSections, socialLinks } = Astro.props;
+---
+
+<header
+	class='mb-20 flex min-h-60 flex-col gap-6 lg:fixed lg:mb-0 lg:max-h-dvh lg:min-h-[90dvh] lg:max-w-[33%] lg:justify-between 2xl:max-w-[calc(20%-0.75rem)]'
+>
+	<div class='flex w-full flex-col gap-4'>
+		<h1
+			class='title-gradient titles-4xl font-800 leading-tight tracking-tight lg:leading-12'
+		>
+			{name}
+		</h1>
+		<p class='titles-xl font-700 text-primary-100 tracking-tight'>{job}</p>
+		<p class='body-sm font-500 text-primary-80'>Based in {location}</p>
+		<p class='body-sm text-primary-80 mt-2 max-w-xs'>{motto}</p>
+	</div>
+
+	<HeaderSections pageSections={pageSections} />
+
+	<ContactLinks socialLinks={socialLinks} />
+</header>

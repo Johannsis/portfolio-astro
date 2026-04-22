@@ -1,0 +1,16 @@
+---
+import HeaderNavItem from './HeaderNavItem.astro';
+
+interface Props {
+	pageSections: readonly string[];
+}
+
+const { pageSections } = Astro.props;
+---
+
+<nav
+	aria-label='Page sections'
+	class='body-2xs hidden flex-col gap-6 uppercase lg:flex'
+>
+	{pageSections.map((section) => <HeaderNavItem sectionName={section} />)}
+</nav>

@@ -1,0 +1,18 @@
+---
+interface Props {
+	sectionName: string;
+}
+
+const { sectionName } = Astro.props;
+---
+
+<a
+	class='nav-link group text-primary-80 hover:text-primary-100 flex w-fit items-center gap-4'
+	href={`#${sectionName}`}
+	data-section-link={sectionName}
+>
+	<span
+		class='nav-line bg-primary-80 group-hover:bg-primary-100 h-px w-8 group-hover:w-16'
+	></span>
+	{sectionName}
+</a>

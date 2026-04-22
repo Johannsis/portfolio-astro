@@ -1,0 +1,23 @@
+---
+import Icon from '../atoms/Icon.astro';
+
+interface Props {
+	ariaLabel: string;
+	icon: 'github' | 'linkedin' | 'mail';
+	url: string;
+}
+
+const { ariaLabel, icon, url } = Astro.props;
+const target = url.startsWith('mailto:') ? undefined : '_blank';
+---
+
+<a
+	aria-label={ariaLabel}
+	class='text-primary-80 hover:text-primary-100 duration-300 ease-out hover:scale-110'
+	href={url}
+	referrerpolicy='no-referrer'
+	rel='noopener noreferrer'
+	target={target}
+>
+	<Icon name={icon} />
+</a>

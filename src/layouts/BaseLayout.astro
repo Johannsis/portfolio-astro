@@ -1,0 +1,64 @@
+---
+import { Font } from 'astro:assets';
+
+import '../styles/global.css';
+
+interface Props {
+	description: string;
+	jsonLd: Record<string, unknown>;
+	keywords: string[];
+	siteName: string;
+	siteUrl: string;
+	title: string;
+}
+
+const { description, jsonLd, keywords, siteName, siteUrl, title } = Astro.props;
+const jsonLdString = JSON.stringify(jsonLd);
+---
+
+<html lang='en'>
+	<head>
+		<Font
+			preload={[{ subset: 'latin', style: 'normal' }]}
+			cssVariable='--font-montserrat'
+		/>
+		<meta charset='utf-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta name='generator' content={Astro.generator} />
+		<meta name='theme-color' content='#0d1117' />
+		<title>{title}</title>
+		<meta name='description' content={description} />
+		<meta name='keywords' content={keywords.join(', ')} />
+		<meta property='og:title' content={title} />
+		<meta property='og:description' content={description} />
+		<meta property='og:type' content='website' />
+		<meta property='og:url' content={siteUrl} />
+		<meta property='og:site_name' content={siteName} />
+		<meta property='og:locale' content='en_US' />
+		<meta name='twitter:card' content='summary' />
+		<meta name='twitter:title' content={title} />
+		<meta name='twitter:description' content={description} />
+		<link rel='icon' type='image/x-icon' href='/images/favicon.ico' />
+		<link
+			rel='apple-touch-icon'
+			sizes='180x180'
+			href='/images/apple-touch-icon.png'
+		/>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='32x32'
+			href='/images/favicon-32x32.png'
+		/>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='16x16'
+			href='/images/favicon-16x16.png'
+		/>
+		<script is:inline type='application/ld+json' set:text={jsonLdString} />
+	</head>
+	<body class='font-[var(--font-montserrat)] antialiased'>
+		<slot />
+	</body>
+</html>

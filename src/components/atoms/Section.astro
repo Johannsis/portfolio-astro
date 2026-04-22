@@ -1,0 +1,17 @@
+---
+interface Props {
+	ariaLabel?: string;
+	className?: string;
+	id?: string;
+}
+
+const { ariaLabel, className = '', id } = Astro.props;
+---
+
+<section
+	aria-label={ariaLabel}
+	class={`flex flex-col gap-4 ${className}`.trim()}
+	id={id}
+>
+	<slot />
+</section>

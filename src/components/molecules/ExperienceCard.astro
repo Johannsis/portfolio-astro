@@ -1,0 +1,44 @@
+---
+import type { ExperienceEntry } from '../../data/user';
+import TechTag from './TechTag.astro';
+
+type Props = ExperienceEntry;
+
+const { companyName, description, period, position, stack, url } = Astro.props;
+---
+
+<article
+	class='experience-card flex grow flex-col gap-3 rounded-2xl border border-transparent p-4 transition-all duration-500 ease-out md:flex-row md:gap-12 lg:p-6'
+	data-experience-card
+>
+	<div class='flex max-w-20 shrink-0 pt-1'>
+		<span class='body-xs font-500 text-primary-80 tracking-wide uppercase'
+			>{period}</span
+		>
+	</div>
+
+	<div class='flex flex-col gap-3'>
+		<a
+			aria-label={`${position} · ${companyName}`}
+			class='flex'
+			href={url}
+			referrerpolicy='no-referrer'
+			rel='noopener noreferrer'
+			target='_blank'
+		>
+			<h3
+				class='experience-title body-md font-700 leading-tight transition-colors duration-300 ease-in-out'
+			>
+				{position} · <span class='text-primary-100'>{companyName}</span>
+			</h3>
+		</a>
+
+		<p class='body-xs font-400 text-primary-80 leading-relaxed'>
+			{description}
+		</p>
+
+		<ul class='flex flex-row flex-wrap gap-2'>
+			{stack.map((tag) => <TechTag tag={tag} />)}
+		</ul>
+	</div>
+</article>

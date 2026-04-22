@@ -1,7 +1,29 @@
-import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
+import { defineConfig, fontProviders } from 'astro/config';
 import UnoCSS from 'unocss/astro';
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [UnoCSS()],
+	devToolbar: {
+		enabled: false,
+	},
+	fonts: [
+		{
+			cssVariable: '--font-montserrat',
+			display: 'swap',
+			name: 'Montserrat',
+			provider: fontProviders.google(),
+			weights: [300, 400, 500, 600, 700],
+		},
+	],
+	integrations: [
+		sitemap({
+			changefreq: 'yearly',
+			lastmod: new Date(),
+			priority: 1,
+		}),
+		UnoCSS({
+			injectReset: true,
+		}),
+	],
+	site: 'https://johannsis.github.io/portfolio',
 });

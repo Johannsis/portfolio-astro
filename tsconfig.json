@@ -1,40 +1,40 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
-  "compilerOptions": {
-    "paths": {
-      "@jh/*": ["./src/*"]
-    },
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "noEmit": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "exactOptionalPropertyTypes": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "sourceMap": true,
-    "removeComments": false,
-    "noImplicitAny": true,
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "incremental": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "verbatimModuleSyntax": true,
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      }
-    ]
-  }
+	"extends": "astro/tsconfigs/strictest",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"],
+	"compilerOptions": {
+		"paths": {
+			"@jh/*": ["./src/*"]
+		},
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"allowJs": true,
+		"jsx": "react-jsx",
+		"noEmit": true,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"exactOptionalPropertyTypes": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"sourceMap": true,
+		"removeComments": false,
+		"noImplicitAny": true,
+		"target": "esnext",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"incremental": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"verbatimModuleSyntax": true,
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		]
+	}
 }

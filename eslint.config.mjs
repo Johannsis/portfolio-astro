@@ -7,7 +7,7 @@ import tseslint from 'typescript-eslint';
 import unocss from '@unocss/eslint-config/flat';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 
-// parsers
+// Parsers
 const tsParser = tseslint.parser;
 const astroParser = astro.parser;
 
@@ -24,23 +24,23 @@ export default defineConfig([
 
 	// Base configs
 	js.configs.recommended,
-	tseslint.configs.recommended,
-	jsxA11y.flatConfigs.recommended,
+	tseslint.configs.strict,
 
 	// Prettier config
 	{
 		plugins: {
-			prettier: prettier,
+			jsxA11y,
+			prettier,
 		},
 		rules: {
-			// disable warnings, since prettier should format on save
+			// Disable warnings, since prettier should format on save
 			'prettier/prettier': 'error',
 		},
 	},
 
-	// astro setup with a11y
+	// Astro setup with a11y
 	astro.configs.recommended,
-	astro.configs['jsx-a11y-recommended'],
+	astro.configs['jsx-a11y-strict'],
 	{
 		files: ['*.astro'],
 		languageOptions: {
@@ -55,7 +55,7 @@ export default defineConfig([
 		},
 		rules: {
 			'no-undef': 'off', // Disable "not defined" errors for specific Astro types that are globally available (ImageMetadata)
-			'@typescript-eslint/no-explicit-any': 'off', // you may want this as it can get annoying
+			'@typescript-eslint/no-explicit-any': 'off', // You may want this as it can get annoying
 			'astro/jsx-a11y/alt-text': 'error',
 			'astro/jsx-a11y/anchor-ambiguous-text': 'error',
 			'astro/jsx-a11y/anchor-has-content': 'error',

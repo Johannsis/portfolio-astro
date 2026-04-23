@@ -1,7 +1,6 @@
 // @unocss-include
 import type { PropertiesHyphen } from 'csstype';
 
-import clsx from 'clsx';
 import { defineConfig, presetWind4, transformerDirectives } from 'unocss';
 
 export default defineConfig({
@@ -19,7 +18,7 @@ export default defineConfig({
 		],
 	] satisfies [string, Partial<PropertiesHyphen>][],
 	shortcuts: {
-		'body-2xs-styles': clsx('text-[0.75rem] leading-5 font-700'),
+		'body-2xs-styles': 'text-[0.75rem] leading-5 font-700',
 		'body-md': 'text-[1rem] leading-[1.2] font-500',
 		'body-sm': 'text-[1rem] leading-6 font-400',
 		'body-xs': 'text-[0.875rem] leading-6 font-700',

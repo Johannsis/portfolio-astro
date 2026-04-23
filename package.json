@@ -19,12 +19,11 @@
 		"prune:all": "bun run prune:node-modules && bun run prune:astro && bun run prune:dist"
 	},
 	"dependencies": {
-		"astro": "^6.1.8",
-		"@astrojs/compiler-rs": "^0.1.8",
-		"clsx": "^2.1.1"
+		"astro": "^6.1.8"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.8",
+		"@astrojs/compiler-rs": "^0.1.8",
 		"@astrojs/sitemap": "^3.7.2",
 		"@astrojs/ts-plugin": "^1.10.7",
 		"@eslint/js": "^10.0.1",
@@ -49,6 +48,7 @@
 		"globals": "^17.5.0",
 		"prettier": "^3.8.3",
 		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.0.0-insiders.f713976",
 		"semantic-release": "^25.0.3",
 		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.58.2",

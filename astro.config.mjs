@@ -6,6 +6,12 @@ export default defineConfig({
 	devToolbar: {
 		enabled: false,
 	},
+	experimental: {
+		queuedRendering: {
+			enabled: true,
+		},
+		rustCompiler: true,
+	},
 	fonts: [
 		{
 			cssVariable: '--font-montserrat',
@@ -25,5 +31,6 @@ export default defineConfig({
 			injectReset: true,
 		}),
 	],
+	security: { csp: true },
 	site: 'https://johannsis.github.io/portfolio',
 });

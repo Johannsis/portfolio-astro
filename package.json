@@ -20,6 +20,7 @@
 	},
 	"dependencies": {
 		"astro": "^6.1.8",
+		"@astrojs/compiler-rs": "^0.1.8",
 		"clsx": "^2.1.1"
 	},
 	"devDependencies": {
@@ -44,11 +45,11 @@
 		"eslint": "^10.2.1",
 		"eslint-plugin-astro": "^1.7.0",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"eslint-plugin-perfectionist": "^5.9.0",
 		"eslint-plugin-prettier": "^5.5.5",
 		"globals": "^17.5.0",
 		"prettier": "^3.8.3",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-astro-organize-imports": "^0.4.12",
 		"semantic-release": "^25.0.3",
 		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.58.2",

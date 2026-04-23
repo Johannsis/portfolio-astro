@@ -1,5 +1,4 @@
 :root {
-	color-scheme: dark;
 	--color-primary-10: oklch(0.1 0.02 258);
 	--color-primary-20: oklch(0.2 0.02 258);
 	--color-primary-30: oklch(0.3 0.02 258);
@@ -8,7 +7,10 @@
 	--color-primary-60: oklch(0.6 0.02 258);
 	--color-primary-70: oklch(0.7 0.02 258);
 	--color-primary-80: oklch(0.8 0.02 258);
+	--color-primary-90: oklch(0.9 0.02 258);
 	--color-primary-100: oklch(0.95 0.02 258);
+
+	--color-secondary-30: oklch(0.46 0.18 245);
 	--color-secondary-40: oklch(0.58 0.2 262);
 	--color-secondary-50: oklch(0.68 0.2 188);
 	--color-secondary-60: oklch(0.72 0.18 205);
@@ -17,6 +19,7 @@
 	--color-secondary-90: oklch(0.8 0.15 78);
 	--color-secondary-100: oklch(0.62 0.2 299);
 	--color-secondary-110: oklch(0.66 0.22 332);
+
 	--aurora-glacier: color-mix(
 		in oklab,
 		var(--color-secondary-60) 34%,
@@ -57,27 +60,32 @@
 		var(--color-secondary-90) 24%,
 		var(--color-primary-10)
 	);
+
 	--mouse-light-gradient: color-mix(
 		in oklab,
 		var(--color-secondary-100) 0.01%,
 		var(--color-primary-10)
 	);
+
 	--title-radial-gradient: linear-gradient(
 		to top in oklab,
 		var(--color-secondary-50) 0%,
 		var(--color-primary-100) 60%,
 		var(--color-primary-100) 100%
 	);
+
+	--font-sans: var(--font-montserrat), sans-serif;
+
+	--animate-blob: blob-drift 32s cubic-bezier(0.42, 0, 0.2, 1) infinite;
+	--animate-blob-slow: blob-drift 48s cubic-bezier(0.42, 0, 0.2, 1) infinite;
+	--animate-blob-orbit: blob-orbit 42s cubic-bezier(0.42, 0, 0.2, 1) infinite;
+	--animate-blob-orbit-slow: blob-orbit 58s cubic-bezier(0.42, 0, 0.2, 1)
+		infinite;
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-html {
-	scroll-behavior: smooth;
+html,
+body {
+	min-height: 100dvh;
 }
 
 html,
@@ -103,15 +111,6 @@ a {
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
-}
-
-.glass-card {
-	backdrop-filter: blur(12px);
-	background: oklch(0.24 0.02 258 / 0.3);
-	border: 1px solid oklch(1 0 0 / 0.05);
-	box-shadow:
-		0 8px 32px oklch(0.15 0.02 258 / 0.3),
-		inset 0 1px 1px oklch(1 0 0 / 0.05);
 }
 
 .section-title::before {
@@ -228,19 +227,15 @@ a {
 	0% {
 		transform: translate3d(-65vw, -52vh, 0) scale(0.9);
 	}
-
 	20% {
 		transform: translate3d(52vw, -44vh, 0) scale(1.02);
 	}
-
 	45% {
 		transform: translate3d(60vw, 42vh, 0) scale(1.1);
 	}
-
 	70% {
 		transform: translate3d(-48vw, 54vh, 0) scale(0.96);
 	}
-
 	100% {
 		transform: translate3d(-65vw, -52vh, 0) scale(0.9);
 	}
@@ -250,19 +245,15 @@ a {
 	0% {
 		transform: translate3d(-46vw, -42vh, 0) scale(0.92);
 	}
-
 	25% {
 		transform: translate3d(50vw, -50vh, 0) scale(1.03);
 	}
-
 	50% {
 		transform: translate3d(64vw, 16vh, 0) scale(1.08);
 	}
-
 	75% {
 		transform: translate3d(-42vw, 50vh, 0) scale(0.98);
 	}
-
 	100% {
 		transform: translate3d(-46vw, -42vh, 0) scale(0.92);
 	}

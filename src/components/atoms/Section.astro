@@ -10,7 +10,7 @@ const { ariaLabel, className = '', id } = Astro.props;
 
 <section
 	aria-label={ariaLabel}
-	class={`flex flex-col gap-4 ${className}`.trim()}
+	class:list={[`flex flex-col gap-4`.trim(), `${className}`.trim()]}
 	id={id}
 >
 	<slot />

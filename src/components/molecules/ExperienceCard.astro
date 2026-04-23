@@ -8,11 +8,11 @@ const { companyName, description, period, position, stack, url } = Astro.props;
 ---
 
 <article
-	class='experience-card flex grow flex-col gap-3 rounded-2xl border border-transparent p-4 transition-all duration-500 ease-out md:flex-row md:gap-12 lg:p-6'
+	class='experience-card p-4 border border-transparent rounded-2xl flex grow flex-col gap-3 transition-all duration-500 ease-out lg:p-6 md:flex-row md:gap-12'
 	data-experience-card
 >
-	<div class='flex max-w-20 shrink-0 pt-1'>
-		<span class='body-xs font-500 text-primary-80 tracking-wide uppercase'>
+	<div class='pt-1 flex shrink-0 max-w-20'>
+		<span class='body-xs text-primary-80 tracking-wide font-500 uppercase'>
 			{period}
 		</span>
 	</div>
@@ -27,13 +27,13 @@ const { companyName, description, period, position, stack, url } = Astro.props;
 			target='_blank'
 		>
 			<h3
-				class='experience-title body-md font-700 leading-tight transition-colors duration-300 ease-in-out'
+				class='experience-title body-md leading-tight font-700 transition-colors duration-300 ease-in-out'
 			>
 				{position} · <span class='text-primary-100'>{companyName}</span>
 			</h3>
 		</a>
 
-		<p class='body-xs font-400 text-primary-80 leading-relaxed'>
+		<p class='body-xs text-primary-80 leading-relaxed font-400'>
 			{description}
 		</p>
 

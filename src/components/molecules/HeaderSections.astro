@@ -10,7 +10,7 @@ const { pageSections } = Astro.props;
 
 <nav
 	aria-label='Page sections'
-	class='body-2xs hidden flex-col gap-6 uppercase lg:flex'
+	class='body-2xs flex-col gap-6 hidden uppercase lg:flex'
 >
 	{pageSections.map((section) => <HeaderNavItem sectionName={section} />)}
 </nav>

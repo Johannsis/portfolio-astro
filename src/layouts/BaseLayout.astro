@@ -19,44 +19,44 @@ const jsonLdString = JSON.stringify(jsonLd);
 <html lang='en'>
 	<head>
 		<Font
-			preload={[{ subset: 'latin', style: 'normal' }]}
 			cssVariable='--font-montserrat'
+			preload={[{ style: 'normal', subset: 'latin' }]}
 		/>
 		<meta charset='utf-8' />
-		<meta name='viewport' content='width=device-width, initial-scale=1' />
-		<meta name='generator' content={Astro.generator} />
-		<meta name='theme-color' content='#0d1117' />
+		<meta content='width=device-width, initial-scale=1' name='viewport' />
+		<meta content={Astro.generator} name='generator' />
+		<meta content='#0d1117' name='theme-color' />
 		<title>{title}</title>
-		<meta name='description' content={description} />
-		<meta name='keywords' content={keywords.join(', ')} />
-		<meta property='og:title' content={title} />
-		<meta property='og:description' content={description} />
-		<meta property='og:type' content='website' />
-		<meta property='og:url' content={siteUrl} />
-		<meta property='og:site_name' content={siteName} />
-		<meta property='og:locale' content='en_US' />
-		<meta name='twitter:card' content='summary' />
-		<meta name='twitter:title' content={title} />
-		<meta name='twitter:description' content={description} />
-		<link rel='icon' type='image/x-icon' href='/images/favicon.ico' />
+		<meta content={description} name='description' />
+		<meta content={keywords.join(', ')} name='keywords' />
+		<meta content={title} property='og:title' />
+		<meta content={description} property='og:description' />
+		<meta content='website' property='og:type' />
+		<meta content={siteUrl} property='og:url' />
+		<meta content={siteName} property='og:site_name' />
+		<meta content='en_US' property='og:locale' />
+		<meta content='summary' name='twitter:card' />
+		<meta content={title} name='twitter:title' />
+		<meta content={description} name='twitter:description' />
+		<link href='/images/favicon.ico' rel='icon' type='image/x-icon' />
 		<link
+			href='/images/apple-touch-icon.png'
 			rel='apple-touch-icon'
 			sizes='180x180'
-			href='/images/apple-touch-icon.png'
 		/>
 		<link
-			rel='icon'
-			type='image/png'
-			sizes='32x32'
 			href='/images/favicon-32x32.png'
+			rel='icon'
+			sizes='32x32'
+			type='image/png'
 		/>
 		<link
-			rel='icon'
-			type='image/png'
-			sizes='16x16'
 			href='/images/favicon-16x16.png'
+			rel='icon'
+			sizes='16x16'
+			type='image/png'
 		/>
-		<script is:inline type='application/ld+json' set:text={jsonLdString} />
+		<script is:inline set:text={jsonLdString} type='application/ld+json' />
 	</head>
 	<body class='font-[var(--font-montserrat)] antialiased'>
 		<slot />

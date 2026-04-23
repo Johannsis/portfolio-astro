@@ -6,19 +6,19 @@ interface Props {
 const { currentYear } = Astro.props;
 ---
 
-<footer class='text-primary-100 z-10 mt-12 w-full'>
+<footer class='text-primary-100 mt-12 w-full z-10'>
 	<div
-		class='border-secondary-100/15 flex w-full max-w-7xl flex-col gap-3 border-t py-10 lg:flex-row lg:items-center lg:justify-between lg:py-12'
+		class='py-10 border-t border-secondary-100/15 flex flex-col gap-3 max-w-7xl w-full lg:py-12 lg:flex-row lg:items-center lg:justify-between'
 	>
-		<p class='body-xs font-400 leading-relaxed'>
+		<p class='body-xs leading-relaxed font-400'>
 			Designed with <span aria-hidden='true'>💚</span> in <span
-				class='font-600 text-primary-100'
+				class='text-primary-100 font-600'
 			>
 				Next.js
-			</span> and <span class='font-600 text-primary-100'>Tailwind CSS</span>,
+			</span> and <span class='text-primary-100 font-600'>Tailwind CSS</span>,
 			deployed in GitHub Pages.
 		</p>
-		<p class='body-xs font-400 text-primary-80 leading-relaxed'>
+		<p class='body-xs text-primary-80 leading-relaxed font-400'>
 			© {currentYear} Johannes Hoersch
 		</p>
 	</div>

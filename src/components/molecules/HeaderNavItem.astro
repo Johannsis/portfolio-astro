@@ -7,12 +7,12 @@ const { sectionName } = Astro.props;
 ---
 
 <a
-	class='nav-link group text-primary-80 hover:text-primary-100 flex w-fit items-center gap-4'
-	href={`#${sectionName}`}
+	class='nav-link group text-primary-80 flex gap-4 w-fit items-center hover:text-primary-100'
 	data-section-link={sectionName}
+	href={`#${sectionName}`}
 >
 	<span
-		class='nav-line bg-primary-80 group-hover:bg-primary-100 h-px w-8 group-hover:w-16'
+		class='nav-line bg-primary-80 h-px w-8 group-hover:bg-primary-100 group-hover:w-16'
 	>
 	</span>
 	{sectionName}

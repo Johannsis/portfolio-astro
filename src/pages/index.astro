@@ -1,5 +1,6 @@
 ---
 import AboutWidget from '@jh/components/organisms/AboutWidget.astro';
+
 import AuroraBackground from '../components/organisms/AuroraBackground.astro';
 import ContactLinksBehavior from '../components/organisms/ContactLinksBehavior.astro';
 import ExperienceCardsBehavior from '../components/organisms/ExperienceCardsBehavior.astro';
@@ -49,12 +50,11 @@ const jsonLd = {
 	title={title}
 >
 	<AuroraBackground />
-
 	<div
-		class='text-primary-80 relative z-10 flex min-h-dvh w-full min-w-min grow flex-col px-6 py-12 transition-colors duration-500 ease-in-out md:px-12 lg:px-24'
+		class='text-primary-80 px-6 py-12 flex grow flex-col min-w-min w-full transition-colors duration-500 ease-in-out relative z-10 min-h-dvh lg:px-24 md:px-12'
 	>
 		<div
-			class='z-10 flex min-h-full max-w-7xl flex-col gap-6 self-center lg:flex-row'
+			class='flex flex-col gap-6 max-w-7xl min-h-full self-center z-10 lg:flex-row'
 		>
 			<Header
 				job={userData.job}
@@ -64,18 +64,15 @@ const jsonLd = {
 				pageSections={pageSections}
 				socialLinks={userData.social}
 			/>
-
 			<main
-				class='mx-auto my-0 flex w-full grow flex-col gap-16 py-0 lg:mr-0 lg:max-w-[calc(60%-0.75rem)]'
+				class='mx-auto my-0 py-0 flex grow flex-col gap-16 w-full lg:mr-0 lg:max-w-[calc(60%-0.75rem)]'
 			>
 				<AboutWidget />
 				<ExperienceWidget experience={userData.experience} />
 			</main>
 		</div>
-
 		<Footer currentYear={currentYear} />
 	</div>
-
 	<MouseLight />
 	<ContactLinksBehavior />
 	<ExperienceCardsBehavior />

@@ -140,31 +140,10 @@ export default defineConfig([
 				},
 			],
 			// Prettier rules
-			'prettier/prettier': [
-				'error',
-				{
-					bracketSameLine: true,
-					htmlWhitespaceSensitivity: 'strict',
-					jsxSingleQuote: true,
-					overrides: [
-						{
-							files: ['*.astro'],
-							options: {
-								parser: 'astro',
-							},
-						},
-					],
-					plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
-					printWidth: 80,
-					singleAttributePerLine: true,
-					singleQuote: true,
-					tabWidth: 2,
-					useTabs: true,
-				},
-			],
+			'prettier/prettier': 'error',
 			// UnoCSS rules
 			'unocss/enforce-class-compile': 'error',
-			'unocss/order': 'off',
+			'unocss/order': 'error',
 			'unocss/order-attributify': 'error',
 		},
 	},

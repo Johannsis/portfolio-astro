@@ -1,10 +1,10 @@
-const cards = Array.from(document.querySelectorAll('[data-experience-card]'));
+const cards = [...document.querySelectorAll('[data-experience-card]')];
 
 if (cards.length > 0) {
 	const observer = new IntersectionObserver(
 		(entries): void => {
 			for (const entry of entries) {
-				if (!(entry.target instanceof HTMLElement)) continue;
+				if (!(entry.target instanceof HTMLElement)) return;
 
 				if (entry.isIntersecting && entry.intersectionRatio >= 0.65) {
 					entry.target.dataset.active = 'true';

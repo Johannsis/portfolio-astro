@@ -1,11 +1,20 @@
 {
-	"editor.formatOnSave": true,
-	"editor.tabSize": 2,
-	"prettier.configPath": ".prettierrc.mjs",
-	"prettier.requireConfig": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"prettier.documentSelectors": ["**/*.astro"],
+	"[markdown]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
 	"[astro]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+		"editor.defaultFormatter": "oxc.oxc-vscode"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.oxc": "always",
+		"source.fixAll.eslint": "always"
+	},
+	"oxc.fmt.configPath": ".oxfmtrc.json",
+	"oxc.configPath": ".oxlintrc.json",
+	"editor.defaultFormatter": "oxc.oxc-vscode",
+	"editor.formatOnSave": true,
+	"editor.indentSize": "tabSize"
 }

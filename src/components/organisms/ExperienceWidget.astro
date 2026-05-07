@@ -1,34 +1,63 @@
 ---
-import type { ExperienceEntry } from '../../data/user';
-import Icon from '../atoms/Icon.astro';
-import Section from '../atoms/Section.astro';
-import SectionTitle from '../atoms/SectionTitle.astro';
-import ExperienceCard from '../molecules/ExperienceCard.astro';
+import Icon from "@jh/components/atoms/Icon.astro";
+import Section from "@jh/components/atoms/Section.astro";
+import SectionTitle from "@jh/components/atoms/SectionTitle.astro";
+import ExperienceCard from "@jh/components/molecules/ExperienceCard.astro";
+import type { ExperienceEntry } from "@jh/data/user";
 
 interface Props {
-	experience: ExperienceEntry[];
+  experience: ExperienceEntry[];
 }
 
 const { experience } = Astro.props;
 ---
 
-<Section ariaLabel='Work experience' id='experience'>
-	<SectionTitle title='experience' />
-
-	<div
-		class='experience-list flex grow flex-col gap-8 transition-all duration-500 ease-out'
-	>
-		{experience.map((entry) => <ExperienceCard {...entry} />)}
-	</div>
-
-	<a
-		aria-label='View Full Resume (opens PDF in new tab)'
-		class='text-primary-80 font-600 mt-4 flex gap-2 transition-colors duration-200 ease-in-out items-center hover:text-primary-100 lg:p-4'
-		href='/assets/Johannes-Hoersch-CV.pdf'
-		rel='noopener noreferrer'
-		target='_blank'
-	>
-		<span class='body-md font-500'>View Full Resume</span>
-		<Icon name='arrowRight' />
-	</a>
+<Section ariaLabel="Work experience" id="experience">
+  <SectionTitle title="experience" />
+  <div class="experience-list">
+    {experience.map((entry) => <ExperienceCard {...entry} />)}
+  </div>
+  <a
+    aria-label="View Full Resume (opens PDF in new tab)"
+    class="resume-link text-primary-80"
+    href="/assets/Johannes-Hoersch-CV.pdf"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span class="body-md resume-link__label">View Full Resume</span>
+    <Icon name="arrowRight" />
+  </a>
 </Section>
+
+<style>
+  .experience-list {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all 500ms ease-out;
+  }
+
+  .resume-link {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    transition: color 200ms ease-in-out;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .resume-link:hover {
+    color: var(--color-primary-100);
+  }
+
+  .resume-link__label {
+    font-weight: 500;
+  }
+
+  @media (min-width: 1024px) {
+    .resume-link {
+      padding: 1rem;
+    }
+  }
+</style>

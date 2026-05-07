@@ -1,7 +1,7 @@
 ---
-import type { SocialLink } from '../../data/user';
-import ContactLinks from '../molecules/ContactLinks.astro';
-import HeaderSections from '../molecules/HeaderSections.astro';
+import ContactLinks from '@jh/components/molecules/ContactLinks.astro';
+import HeaderSections from '@jh/components/molecules/HeaderSections.astro';
+import type { SocialLink } from '@jh/data/user';
 
 interface Props {
 	job: string;
@@ -15,21 +15,75 @@ interface Props {
 const { job, location, motto, name, pageSections, socialLinks } = Astro.props;
 ---
 
-<header
-	class='mb-20 flex flex-col gap-6 min-h-60 lg:mb-0 2xl:max-w-[calc(20%-0.75rem)] lg:max-w-[33%] lg:min-h-[90dvh] lg:justify-between lg:fixed lg:max-h-dvh'
->
-	<div class='flex flex-col gap-4 w-full'>
-		<h1
-			class='title-gradient titles-4xl leading-tight tracking-tight font-800 lg:leading-12'
-		>
-			{name}
-		</h1>
-		<p class='text-primary-100 titles-xl tracking-tight font-700'>{job}</p>
-		<p class='body-sm text-primary-80 font-500'>Based in {location}</p>
-		<p class='body-sm text-primary-80 mt-2 max-w-xs'>{motto}</p>
+<header class='site-header'>
+	<div class='site-header__top'>
+		<h1 class='title-gradient titles-4xl site-header__name'>{name}</h1>
+		<p class='text-primary-100 titles-xl site-header__job'>{job}</p>
+		<p class='body-sm text-primary-80 site-header__location'>
+			Based in {location}
+		</p>
+		<p class='body-sm text-primary-80 site-header__motto'>{motto}</p>
 	</div>
 
 	<HeaderSections pageSections={pageSections} />
 
 	<ContactLinks socialLinks={socialLinks} />
 </header>
+
+<style>
+	.site-header {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		min-height: 15rem;
+		margin-bottom: 5rem;
+	}
+
+	.site-header__top {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		width: 100%;
+	}
+
+	.site-header__name {
+		line-height: 1.25;
+		letter-spacing: -0.025em;
+		font-weight: 800;
+	}
+
+	.site-header__job {
+		letter-spacing: -0.025em;
+		font-weight: 700;
+	}
+
+	.site-header__location {
+		font-weight: 500;
+	}
+
+	.site-header__motto {
+		margin-top: 0.5rem;
+		max-width: 20rem;
+	}
+
+	@media (min-width: 1024px) {
+		.site-header {
+			margin-bottom: 0;
+			max-width: 33%;
+			min-height: 90dvh;
+			justify-content: space-between;
+			position: fixed;
+			max-height: 100dvh;
+		}
+
+		.site-header__name {
+			line-height: 3rem;
+		}
+	}
+
+	@media (min-width: 1536px) {
+		.site-header {
+			max-width: calc(20% - 0.75rem);
+		}
+	}
+</style>

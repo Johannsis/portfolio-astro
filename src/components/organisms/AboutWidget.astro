@@ -1,20 +1,33 @@
 ---
-import Section from '../atoms/Section.astro';
-import SectionTitle from '../atoms/SectionTitle.astro';
-import AboutReadMore from '../molecules/AboutReadMore.astro';
+import Section from "@jh/components/atoms/Section.astro";
+import SectionTitle from "@jh/components/atoms/SectionTitle.astro";
+import AboutReadMore from "@jh/components/molecules/AboutReadMore.astro";
 ---
 
-<Section ariaLabel='About me' className='lg:p-4' id='about'>
-	<SectionTitle title='about' />
+<Section ariaLabel="About me" className="about-widget" id="about">
+  <SectionTitle title="about" />
 
-	<p class='body-xs text-primary-80 leading-relaxed font-400'>
-		I&apos;m a detail-oriented Software Engineer passionate about building
-		performant, pixel-perfect, and accessible interfaces that combine creative
-		design with maintainable engineering. I love integrating cutting-edge
-		technologies with thoughtful design to create engaging user experiences
-		focused on responsiveness, performance, usability, and SEO, while optimizing
-		for Core Web Vitals.
-	</p>
+  <p class="body-xs text-primary-80 about-widget__intro">
+    I&apos;m a detail-oriented Software Engineer passionate about building
+    performant, pixel-perfect, and accessible interfaces that combine creative
+    design with maintainable engineering. I love integrating cutting-edge
+    technologies with thoughtful design to create engaging user experiences
+    focused on responsiveness, performance, usability, and SEO, while optimizing
+    for Core Web Vitals.
+  </p>
 
-	<AboutReadMore />
+  <AboutReadMore />
 </Section>
+
+<style>
+  .about-widget__intro {
+    line-height: 1.625;
+    font-weight: 400;
+  }
+
+  @media (min-width: 1024px) {
+    :global(.about-widget) {
+      padding: 1rem;
+    }
+  }
+</style>

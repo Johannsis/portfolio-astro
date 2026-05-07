@@ -1,6 +1,6 @@
-const sectionLinks = Array.from(
-	document.querySelectorAll('[data-section-link]'),
-);
+const sectionLinks = [
+	...document.querySelectorAll('[data-section-link]'),
+] as HTMLLinkElement[];
 
 if (sectionLinks.length > 0) {
 	const observer = new IntersectionObserver(
@@ -8,14 +8,13 @@ if (sectionLinks.length > 0) {
 			for (const entry of entries) {
 				const id = entry.target.getAttribute('id');
 
-				if (!id) continue;
+				if (!id) return;
 
 				const link = document.querySelector(`[data-section-link="${id}"]`);
 
-				if (!(link instanceof HTMLElement)) continue;
+				if (!(link instanceof HTMLElement)) return;
 
-				const isActive =
-					entry.isIntersecting && entry.intersectionRatio >= 0.35;
+				const isActive = entry.isIntersecting && entry.intersectionRatio >= 0.35;
 				link.classList.toggle('is-active', isActive);
 			}
 		},
@@ -26,8 +25,8 @@ if (sectionLinks.length > 0) {
 	);
 
 	for (const link of sectionLinks) {
-		const sectionId = link.getAttribute('data-section-link');
-		const section = sectionId ? document.getElementById(sectionId) : null;
+		const sectionId = link.dataset.sectionLink;
+		const section = sectionId ? document.querySelector(`#${sectionId}`) : null;
 
 		if (section) observer.observe(section);
 	}

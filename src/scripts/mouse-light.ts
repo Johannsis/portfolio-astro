@@ -2,7 +2,7 @@ const light = document.querySelector('[data-mouse-light]');
 
 if (
 	light instanceof HTMLElement &&
-	window.matchMedia('(min-width: 1024px)').matches
+	globalThis.matchMedia('(min-width: 1024px)').matches
 ) {
 	let frameId: null | number = null;
 	let lastX = -9999;
@@ -20,8 +20,10 @@ if (
 
 		if (frameId !== null) return;
 
-		frameId = window.requestAnimationFrame(update);
+		frameId = globalThis.requestAnimationFrame(update);
 	};
 
-	window.addEventListener('pointermove', handlePointerMove, { passive: true });
+	globalThis.addEventListener('pointermove', handlePointerMove, {
+		passive: true,
+	});
 }

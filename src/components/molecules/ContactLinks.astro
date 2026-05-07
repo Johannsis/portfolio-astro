@@ -1,21 +1,35 @@
 ---
-import type { SocialLink } from '../../data/user';
-import ContactLink from './ContactLink.astro';
+import type { SocialLink } from "@jh/data/user";
+
+import ContactLink from "./ContactLink.astro";
 
 interface Props {
-	socialLinks: SocialLink[];
+  socialLinks: SocialLink[];
 }
 
 const { socialLinks } = Astro.props;
 ---
 
-<nav
-	aria-label='Contact links'
-	class='flex flex-row gap-5 h-fit lg:mb-36 lg:relative'
->
-	{
-		socialLinks.map(({ ariaLabel, icon, url }) => (
-			<ContactLink ariaLabel={ariaLabel} icon={icon} url={url} />
-		))
-	}
+<nav aria-label="Contact links" class="contact-links">
+  {
+    socialLinks.map(({ ariaLabel, icon, url }) => (
+      <ContactLink ariaLabel={ariaLabel} icon={icon} url={url} />
+    ))
+  }
 </nav>
+
+<style>
+  .contact-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    height: fit-content;
+  }
+
+  @media (min-width: 1024px) {
+    .contact-links {
+      margin-bottom: 9rem;
+      position: relative;
+    }
+  }
+</style>

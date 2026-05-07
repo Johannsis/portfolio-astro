@@ -1,23 +1,37 @@
 ---
-import Icon from '../atoms/Icon.astro';
+import Icon from "@jh/components/atoms/Icon.astro";
 
 interface Props {
-	ariaLabel: string;
-	icon: 'github' | 'linkedin' | 'mail';
-	url: string;
+  ariaLabel: string;
+  icon: "github" | "linkedin" | "mail";
+  url: string;
 }
 
 const { ariaLabel, icon, url } = Astro.props;
-const target = url.startsWith('mailto:') ? undefined : '_blank';
+const target = url.startsWith("mailto:") ? null : "_blank";
 ---
 
 <a
-	aria-label={ariaLabel}
-	class='text-primary-80 duration-300 ease-out hover:text-primary-100 hover:scale-110'
-	href={url}
-	referrerpolicy='no-referrer'
-	rel='noopener noreferrer'
-	target={target}
+  aria-label={ariaLabel}
+  class="contact-link text-primary-80"
+  href={url}
+  referrerpolicy="no-referrer"
+  rel="noopener noreferrer"
+  target={target}
 >
-	<Icon name={icon} />
+  <Icon name={icon} />
 </a>
+
+<style>
+  .contact-link {
+    transition:
+      color 300ms ease-out,
+      transform 300ms ease-out;
+    display: inline-flex;
+  }
+
+  .contact-link:hover {
+    color: var(--color-primary-100);
+    transform: scale(1.1);
+  }
+</style>

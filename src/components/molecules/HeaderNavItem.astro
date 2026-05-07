@@ -1,6 +1,6 @@
 ---
 interface Props {
-  sectionName: string;
+	sectionName: string;
 }
 
 const { sectionName } = Astro.props;
@@ -18,9 +18,9 @@ const { sectionName } = Astro.props;
 <style>
   .nav-link {
     display: flex;
-    gap: 1rem;
     width: fit-content;
     align-items: center;
+    gap: 1rem;
     transition: color 300ms;
   }
 
@@ -29,15 +29,15 @@ const { sectionName } = Astro.props;
   }
 
   .nav-line {
-    background-color: var(--color-primary-80);
-    height: 1px;
-    width: 2rem;
     display: block;
+    width: 2rem;
+    height: 1px;
+    background-color: var(--color-primary-80);
     transition: background-color 300ms, width 300ms;
   }
 
   .nav-link:hover .nav-line {
-    background-color: var(--color-primary-100);
     width: 4rem;
+    background-color: var(--color-primary-100);
   }
 </style>

@@ -1,42 +1,44 @@
 ---
-import AboutWidget from "@jh/components/organisms/AboutWidget.astro";
-import AuroraBackground from "@jh/components/organisms/AuroraBackground.astro";
-import ContactLinksBehavior from "@jh/components/organisms/ContactLinksBehavior.astro";
-import ExperienceCardsBehavior from "@jh/components/organisms/ExperienceCardsBehavior.astro";
-import ExperienceWidget from "@jh/components/organisms/ExperienceWidget.astro";
-import Footer from "@jh/components/organisms/Footer.astro";
-import Header from "@jh/components/organisms/Header.astro";
-import MouseLight from "@jh/components/organisms/MouseLight.astro";
-import { pageSections, siteUrl, userData } from "@jh/data/user";
-import BaseLayout from "@jh/layouts/BaseLayout.astro";
+import AboutWidget from '@jh/components/organisms/AboutWidget.astro';
+import AuroraBackground from '@jh/components/organisms/AuroraBackground.astro';
+import ContactLinksBehavior from '@jh/components/organisms/ContactLinksBehavior.astro';
+import ExperienceCardsBehavior from '@jh/components/organisms/ExperienceCardsBehavior.astro';
+import ExperienceWidget from '@jh/components/organisms/ExperienceWidget.astro';
+import Footer from '@jh/components/organisms/Footer.astro';
+import Header from '@jh/components/organisms/Header.astro';
+import MouseLight from '@jh/components/organisms/MouseLight.astro';
+import {
+	pageSections, siteUrl, userData
+} from '@jh/data/user';
+import BaseLayout from '@jh/layouts/BaseLayout.astro';
 
 const currentYear = new Date().getFullYear();
-const title = "Johannes Hoersch | Senior Front-End Developer";
+const title = 'Johannes Hoersch | Senior Front-End Developer';
 const description =
-  "Johannes Hoersch — Senior Front-End Developer based in Santo Domingo, DR. Building fast, accessible, and beautiful digital experiences with Next.js, React, and TypeScript.";
+	'Johannes Hoersch — Senior Front-End Developer based in Santo Domingo, DR. Building fast, accessible, and beautiful digital experiences with Next.js, React, and TypeScript.';
 const keywords = [
-  "Software Engineer",
-  "Front-End Developer",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Johannes Hoersch",
+	'Software Engineer',
+	'Front-End Developer',
+	'React',
+	'Next.js',
+	'TypeScript',
+	'Johannes Hoersch'
 ];
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  jobTitle: "Senior Front-End Developer",
-  name: "Johannes Hoersch",
-  sameAs: [
-    "https://github.com/Johannsis",
-    "https://www.linkedin.com/in/johanneshoersch/",
-  ],
-  url: siteUrl,
-  worksFor: {
-    "@type": "Organization",
-    name: "TelevisaUnivision",
-  },
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	jobTitle: 'Senior Front-End Developer',
+	name: 'Johannes Hoersch',
+	sameAs: [
+		'https://github.com/Johannsis',
+		'https://www.linkedin.com/in/johanneshoersch/'
+	],
+	url: siteUrl,
+	worksFor: {
+		'@type': 'Organization',
+		name: 'TelevisaUnivision'
+	}
 };
 ---
 
@@ -73,59 +75,57 @@ const jsonLd = {
 
 <style>
   .page-wrapper {
-    color: var(--color-primary-80);
-    padding: 3rem 1.5rem;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    min-width: min-content;
-    width: 100%;
-    transition: color 500ms ease-in-out;
     position: relative;
     z-index: 10;
+    display: flex;
+    width: 100%;
+    min-width: min-content;
     min-height: 100dvh;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 3rem 1.5rem;
+    color: var(--color-primary-80);
+    transition: color 500ms ease-in-out;
   }
 
   .page-inner {
+    z-index: 10;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
     max-width: 80rem;
     min-height: 100%;
+    flex-direction: column;
     align-self: center;
-    z-index: 10;
+    gap: 1.5rem;
   }
 
   .page-main {
-    margin: 0 auto;
-    padding: 0;
     display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    gap: 4rem;
     width: 100%;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0;
+    margin: 0 auto;
+    gap: 4rem;
   }
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     .page-wrapper {
-      padding-left: 3rem;
       padding-right: 3rem;
+      padding-left: 3rem;
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (width >= 1024px) {
     .page-wrapper {
-      padding-left: 6rem;
       padding-right: 6rem;
+      padding-left: 6rem;
     }
-
     .page-inner {
       flex-direction: row;
     }
-
     .page-main {
-      margin-right: 0;
       max-width: calc(60% - 0.75rem);
+      margin-right: 0;
     }
   }
 </style>

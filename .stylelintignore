@@ -1,0 +1,10 @@
+# Ignore everything
+*.*
+dist
+node_modules
+node_modules/**
+LICENSE
+
+# Except CSS files
+!*.css
+!*.astro

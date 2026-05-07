@@ -1,122 +1,39 @@
 {
 	"lsp": {
+		"stylelint-lsp": {
+			"settings": {
+				"stylelint": {
+					"configFile": ".stylelintrc.json",
+					"packageManager": "bun",
+					"validate": ["css", "astro"]
+				}
+			}
+		},
 		"oxlint": {
 			"initialization_options": {
 				"settings": {
-					"configPath": ".oxlintrc.json",
+					"configPath": "oxlint.config.ts",
 					"run": "onType",
 					"disableNestedConfig": false,
 					"fixKind": "all"
 				}
 			}
-		},
-		"oxfmt": {
-			"initialization_options": {
-				"settings": {
-					"fmt.configPath": ".oxfmtrc.json",
-					"run": "onSave"
-				}
-			}
 		}
 	},
 	"code_actions_on_format": {
-		"source.fixAll.oxc": true,
-		"source.fixAll.eslint": true
+		"source.fixAll": true,
 	},
 	"format_on_save": "on",
-	"ensure_final_newline_on_save": false,
-	"language_servers": ["..."],
-	"languages": {
-		"HTML": {
-			"format_on_save": "on",
-			"prettier": {
-				"allowed": false
-			},
-			"formatter": [
-				{
-					"language_server": {
-						"name": "oxfmt"
-					}
-				}
-			]
-		},
-		"JSON": {
-			"format_on_save": "on",
-			"prettier": {
-				"allowed": false
-			},
-			"formatter": [
-				{
-					"language_server": {
-						"name": "oxfmt"
-					}
-				}
-			]
-		},
-		"JSON5": {
-			"format_on_save": "on",
-			"prettier": {
-				"allowed": false
-			},
-			"formatter": [
-				{
-					"language_server": {
-						"name": "oxfmt"
-					}
-				}
-			]
-		},
-		"JSONC": {
-			"format_on_save": "on",
-			"prettier": {
-				"allowed": false
-			},
-			"formatter": [
-				{
-					"language_server": {
-						"name": "oxfmt"
-					}
-				}
-			]
-		},
-		"Markdown": {
-			"format_on_save": "on",
-			"prettier": {
-				"allowed": false
-			},
-			"formatter": [
-				{
-					"language_server": {
-						"name": "oxfmt"
-					}
-				}
-			]
-		},
-		"TypeScript": {
-			"format_on_save": "on",
-			"prettier": {
-				"allowed": false
-			},
-			"formatter": [
-				{
-					"language_server": {
-						"name": "oxfmt"
-					}
-				}
-			]
-		},
-		"YAML": {
-			"format_on_save": "on",
-			"prettier": {
-				"allowed": false
-			},
-			"formatter": [
-				{
-					"language_server": {
-						"name": "oxfmt"
-					}
-				}
-			]
+	"prettier": {
+		"allowed": false
+	},
+	"formatter": [
+		{
+			"language_server": {
+				"name": "oxlint"
+			}
 		}
-	}
+	],
+	"ensure_final_newline_on_save": true,
+	"language_servers": ["..."]
 }

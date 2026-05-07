@@ -15,8 +15,8 @@ if (cards.length > 0) {
 		},
 		{
 			rootMargin: '-10% 0px -15% 0px',
-			threshold: [0, 0.2, 0.4, 0.55, 0.7, 1],
-		},
+			threshold: [0, 0.2, 0.4, 0.55, 0.7, 1]
+		}
 	);
 
 	for (const card of cards) {

@@ -1,11 +1,11 @@
 ---
 interface Props {
-  ariaLabel?: string;
-  className?: string;
-  id?: string;
+	ariaLabel?: string;
+	className?: string;
+	id?: string;
 }
 
-const { ariaLabel, className = "", id } = Astro.props;
+const { ariaLabel, className = '', id } = Astro.props;
 ---
 
 <section aria-label={ariaLabel} class={`section ${className}`.trim()} id={id}>

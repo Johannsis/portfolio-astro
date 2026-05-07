@@ -1,12 +1,14 @@
 ---
-import Icon from "@jh/components/atoms/Icon.astro";
-import Section from "@jh/components/atoms/Section.astro";
-import SectionTitle from "@jh/components/atoms/SectionTitle.astro";
-import ExperienceCard from "@jh/components/molecules/ExperienceCard.astro";
-import type { ExperienceEntry } from "@jh/data/user";
+import Icon from '@jh/components/atoms/Icon.astro';
+import Section from '@jh/components/atoms/Section.astro';
+import SectionTitle from '@jh/components/atoms/SectionTitle.astro';
+import ExperienceCard from '@jh/components/molecules/ExperienceCard.astro';
+import type {
+	ExperienceEntry
+} from '@jh/data/user';
 
 interface Props {
-  experience: ExperienceEntry[];
+	experience: ExperienceEntry[];
 }
 
 const { experience } = Astro.props;
@@ -24,7 +26,7 @@ const { experience } = Astro.props;
     rel="noopener noreferrer"
     target="_blank"
   >
-    <span class="body-md resume-link__label">View Full Resume</span>
+    <span class="body-md resume-link-label">View Full Resume</span>
     <Icon name="arrowRight" />
   </a>
 </Section>
@@ -32,30 +34,30 @@ const { experience } = Astro.props;
 <style>
   .experience-list {
     display: flex;
-    flex-grow: 1;
     flex-direction: column;
+    flex-grow: 1;
     gap: 2rem;
     transition: all 500ms ease-out;
   }
 
   .resume-link {
-    margin-top: 1rem;
     display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: 600;
     gap: 0.5rem;
     transition: color 200ms ease-in-out;
-    align-items: center;
-    font-weight: 600;
   }
 
   .resume-link:hover {
     color: var(--color-primary-100);
   }
 
-  .resume-link__label {
+  .resume-link-label {
     font-weight: 500;
   }
 
-  @media (min-width: 1024px) {
+  @media (width >= 1024px) {
     .resume-link {
       padding: 1rem;
     }

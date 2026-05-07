@@ -1,8 +1,8 @@
 ---
-import HeaderNavItem from "./HeaderNavItem.astro";
+import HeaderNavItem from './HeaderNavItem.astro';
 
 interface Props {
-  pageSections: readonly string[];
+	pageSections: readonly string[];
 }
 
 const { pageSections } = Astro.props;
@@ -20,7 +20,7 @@ const { pageSections } = Astro.props;
     text-transform: uppercase;
   }
 
-  @media (min-width: 1024px) {
+  @media (width >= 1024px) {
     .header-sections {
       display: flex;
     }

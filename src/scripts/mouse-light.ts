@@ -1,9 +1,6 @@
 const light = document.querySelector('[data-mouse-light]');
 
-if (
-	light instanceof HTMLElement &&
-	globalThis.matchMedia('(min-width: 1024px)').matches
-) {
+if (light instanceof HTMLElement && globalThis.matchMedia('(min-width: 1024px)').matches) {
 	let frameId: null | number = null;
 	let lastX = -9999;
 	let lastY = -9999;
@@ -23,7 +20,11 @@ if (
 		frameId = globalThis.requestAnimationFrame(update);
 	};
 
-	globalThis.addEventListener('pointermove', handlePointerMove, {
-		passive: true,
-	});
+	globalThis.addEventListener(
+		'pointermove',
+		handlePointerMove,
+		{
+			passive: true
+		}
+	);
 }

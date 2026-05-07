@@ -1,15 +1,17 @@
 ---
-import { Font } from "astro:assets";
+import {
+	Font
+} from 'astro:assets';
 
-import "@jh/styles/global.css";
+import '@jh/styles/global.css';
 
 interface Props {
-  description: string;
-  jsonLd: Record<string, unknown>;
-  keywords: string[];
-  siteName: string;
-  siteUrl: string;
-  title: string;
+	description: string;
+	jsonLd: Record<string, unknown>;
+	keywords: string[];
+	siteName: string;
+	siteUrl: string;
+	title: string;
 }
 
 const { description, keywords, siteName, siteUrl, title } = Astro.props;
@@ -63,6 +65,7 @@ const { description, keywords, siteName, siteUrl, title } = Astro.props;
 
 <style>
   body {
+    /* stylelint-disable-next-line no-unknown-custom-properties */
     font-family: var(--font-montserrat), sans-serif;
   }
 </style>

@@ -1,10 +1,12 @@
 ---
-import type { SocialLink } from "@jh/data/user";
+import type {
+	SocialLink
+} from '@jh/data/user';
 
-import ContactLink from "./ContactLink.astro";
+import ContactLink from './ContactLink.astro';
 
 interface Props {
-  socialLinks: SocialLink[];
+	socialLinks: SocialLink[];
 }
 
 const { socialLinks } = Astro.props;
@@ -21,15 +23,15 @@ const { socialLinks } = Astro.props;
 <style>
   .contact-links {
     display: flex;
+    height: fit-content;
     flex-direction: row;
     gap: 1.25rem;
-    height: fit-content;
   }
 
-  @media (min-width: 1024px) {
+  @media (width >= 1024px) {
     .contact-links {
-      margin-bottom: 9rem;
       position: relative;
+      margin-bottom: 9rem;
     }
   }
 </style>

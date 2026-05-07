@@ -30,5 +30,6 @@
 	"oxc.configPath": ".oxlintrc.json",
 	"oxc.fmt.configPath": ".oxfmtrc.json",
 	"prettier.configPath": ".prettierrc.json",
+	"prettier.prettierPath": "./node_modules/prettier/index.cjs",
 	"stylelint.validate": ["css", "astro"]
 }

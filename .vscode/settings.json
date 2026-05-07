@@ -28,6 +28,7 @@
 		"json5"
 	],
 	"oxc.configPath": ".oxlintrc.json",
+	"oxc.fixKind": "all",
 	"oxc.fmt.configPath": ".oxfmtrc.json",
 	"prettier.configPath": ".prettierrc.json",
 	"prettier.prettierPath": "./node_modules/prettier/index.cjs",

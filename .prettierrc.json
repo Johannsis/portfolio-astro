@@ -1,4 +1,10 @@
 {
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"endOfLine": "lf",
+	"ignorePatterns": ["dist", "**/node_modules", "node_modules", "bun.lock"],
+	"insertFinalNewline": true,
+	"jsxSingleQuote": true,
 	"overrides": [
 		{
 			"files": "*.astro",
@@ -18,5 +24,13 @@
 			}
 		}
 	],
-	"plugins": ["prettier-plugin-astro"]
+	"plugins": ["prettier-plugin-astro"],
+	"printWidth": 80,
+	"quoteProps": "as-needed",
+	"semi": true,
+	"singleQuote": true,
+	"sortPackageJson": true,
+	"tabWidth": 2,
+	"trailingComma": "all",
+	"useTabs": true
 }

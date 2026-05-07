@@ -14,7 +14,7 @@
 		"builtin": true,
 		"node": true
 	},
-	"ignorePatterns": ["dist", "**/node_modules", "node_modules", "bun.lock"],
+	"ignorePatterns": ["dist", "node_modules", "bun.lock"],
 	"jsPlugins": ["eslint-plugin-perfectionist", "@stylistic/eslint-plugin"],
 	"plugins": ["eslint", "import", "oxc", "promise", "typescript", "unicorn"],
 	"rules": {

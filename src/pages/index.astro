@@ -7,9 +7,7 @@ import ExperienceWidget from '@jh/components/organisms/ExperienceWidget.astro';
 import Footer from '@jh/components/organisms/Footer.astro';
 import Header from '@jh/components/organisms/Header.astro';
 import MouseLight from '@jh/components/organisms/MouseLight.astro';
-import {
-	pageSections, siteUrl, userData
-} from '@jh/data/user';
+import { pageSections, siteUrl, userData } from '@jh/data/user';
 import BaseLayout from '@jh/layouts/BaseLayout.astro';
 
 const currentYear = new Date().getFullYear();
@@ -22,7 +20,7 @@ const keywords = [
 	'React',
 	'Next.js',
 	'TypeScript',
-	'Johannes Hoersch'
+	'Johannes Hoersch',
 ];
 
 const jsonLd = {
@@ -32,100 +30,100 @@ const jsonLd = {
 	name: 'Johannes Hoersch',
 	sameAs: [
 		'https://github.com/Johannsis',
-		'https://www.linkedin.com/in/johanneshoersch/'
+		'https://www.linkedin.com/in/johanneshoersch/',
 	],
 	url: siteUrl,
 	worksFor: {
 		'@type': 'Organization',
-		name: 'TelevisaUnivision'
-	}
+		name: 'TelevisaUnivision',
+	},
 };
 ---
 
 <BaseLayout
-  description={description}
-  jsonLd={jsonLd}
-  keywords={keywords}
-  siteName="Johannes Hoersch Portfolio"
-  siteUrl={siteUrl}
-  title={title}
+	description={description}
+	jsonLd={jsonLd}
+	keywords={keywords}
+	siteName='Johannes Hoersch Portfolio'
+	siteUrl={siteUrl}
+	title={title}
 >
-  <AuroraBackground />
-  <div class="page-wrapper">
-    <div class="page-inner">
-      <Header
-        job={userData.job}
-        location={userData.location}
-        motto={userData.motto}
-        name={userData.name}
-        pageSections={pageSections}
-        socialLinks={userData.social}
-      />
-      <main class="page-main">
-        <AboutWidget />
-        <ExperienceWidget experience={userData.experience} />
-      </main>
-    </div>
-    <Footer currentYear={currentYear} />
-  </div>
-  <MouseLight />
-  <ContactLinksBehavior />
-  <ExperienceCardsBehavior />
+	<AuroraBackground />
+	<div class='page-wrapper'>
+		<div class='page-inner'>
+			<Header
+				job={userData.job}
+				location={userData.location}
+				motto={userData.motto}
+				name={userData.name}
+				pageSections={pageSections}
+				socialLinks={userData.social}
+			/>
+			<main class='page-main'>
+				<AboutWidget />
+				<ExperienceWidget experience={userData.experience} />
+			</main>
+		</div>
+		<Footer currentYear={currentYear} />
+	</div>
+	<MouseLight />
+	<ContactLinksBehavior />
+	<ExperienceCardsBehavior />
 </BaseLayout>
 
 <style>
-  .page-wrapper {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    width: 100%;
-    min-width: min-content;
-    min-height: 100dvh;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 3rem 1.5rem;
-    color: var(--color-primary-80);
-    transition: color 500ms ease-in-out;
-  }
+	.page-wrapper {
+		position: relative;
+		z-index: 10;
+		display: flex;
+		width: 100%;
+		min-width: min-content;
+		min-height: 100dvh;
+		flex-direction: column;
+		flex-grow: 1;
+		padding: 3rem 1.5rem;
+		color: var(--color-primary-80);
+		transition: color 500ms ease-in-out;
+	}
 
-  .page-inner {
-    z-index: 10;
-    display: flex;
-    max-width: 80rem;
-    min-height: 100%;
-    flex-direction: column;
-    align-self: center;
-    gap: 1.5rem;
-  }
+	.page-inner {
+		z-index: 10;
+		display: flex;
+		max-width: 80rem;
+		min-height: 100%;
+		flex-direction: column;
+		align-self: center;
+		gap: 1.5rem;
+	}
 
-  .page-main {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 0;
-    margin: 0 auto;
-    gap: 4rem;
-  }
+	.page-main {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		flex-grow: 1;
+		padding: 0;
+		margin: 0 auto;
+		gap: 4rem;
+	}
 
-  @media (width >= 768px) {
-    .page-wrapper {
-      padding-right: 3rem;
-      padding-left: 3rem;
-    }
-  }
+	@media (width >= 768px) {
+		.page-wrapper {
+			padding-right: 3rem;
+			padding-left: 3rem;
+		}
+	}
 
-  @media (width >= 1024px) {
-    .page-wrapper {
-      padding-right: 6rem;
-      padding-left: 6rem;
-    }
-    .page-inner {
-      flex-direction: row;
-    }
-    .page-main {
-      max-width: calc(60% - 0.75rem);
-      margin-right: 0;
-    }
-  }
+	@media (width >= 1024px) {
+		.page-wrapper {
+			padding-right: 6rem;
+			padding-left: 6rem;
+		}
+		.page-inner {
+			flex-direction: row;
+		}
+		.page-main {
+			max-width: calc(60% - 0.75rem);
+			margin-right: 0;
+		}
+	}
 </style>

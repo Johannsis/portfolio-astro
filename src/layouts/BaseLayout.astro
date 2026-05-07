@@ -1,7 +1,6 @@
 ---
-import {
-	Font
-} from 'astro:assets';
+/* eslint-disable astro/no-set-html-directive */
+import { Font } from 'astro:assets';
 
 import '@jh/styles/global.css';
 
@@ -14,58 +13,59 @@ interface Props {
 	title: string;
 }
 
-const { description, keywords, siteName, siteUrl, title } = Astro.props;
+const { description, jsonLd, keywords, siteName, siteUrl, title } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <Font
-      cssVariable="--font-montserrat"
-      preload={[{ style: "normal", subset: "latin" }]}
-    />
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content={Astro.generator} name="generator" />
-    <meta content="#0d1117" name="theme-color" />
-    <title>{title}</title>
-    <meta content={description} name="description" />
-    <meta content={keywords.join(", ")} name="keywords" />
-    <meta content={title} property="og:title" />
-    <meta content={description} property="og:description" />
-    <meta content="website" property="og:type" />
-    <meta content={siteUrl} property="og:url" />
-    <meta content={siteName} property="og:site_name" />
-    <meta content="en_US" property="og:locale" />
-    <meta content="summary" name="twitter:card" />
-    <meta content={title} name="twitter:title" />
-    <meta content={description} name="twitter:description" />
-    <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
-    <link
-      href="/images/apple-touch-icon.png"
-      rel="apple-touch-icon"
-      sizes="180x180"
-    />
-    <link
-      href="/images/favicon-32x32.png"
-      rel="icon"
-      sizes="32x32"
-      type="image/png"
-    />
-    <link
-      href="/images/favicon-16x16.png"
-      rel="icon"
-      sizes="16x16"
-      type="image/png"
-    />
-  </head>
-  <body>
-    <slot />
-  </body>
+<html lang='en'>
+	<head>
+		<Font
+			cssVariable='--font-montserrat'
+			preload={[{ style: 'normal', subset: 'latin' }]}
+		/>
+		<meta charset='utf-8' />
+		<meta content='width=device-width, initial-scale=1' name='viewport' />
+		<meta content={Astro.generator} name='generator' />
+		<meta content='#0d1117' name='theme-color' />
+		<title>{title}</title>
+		<meta content={title} property='og:title' />
+		<meta content={description} name='description' />
+		<meta content={keywords.join(', ')} name='keywords' />
+		<meta content={description} property='og:description' />
+		<meta content='website' property='og:type' />
+		<meta content={siteUrl} property='og:url' />
+		<meta content={siteName} property='og:site_name' />
+		<meta content='en_US' property='og:locale' />
+		<meta content='summary' name='twitter:card' />
+		<meta content={title} name='twitter:title' />
+		<meta content={description} name='twitter:description' />
+		<link href='/images/favicon.ico' rel='icon' type='image/x-icon' />
+		<link
+			href='/images/apple-touch-icon.png'
+			rel='apple-touch-icon'
+			sizes='180x180'
+		/>
+		<link
+			href='/images/favicon-32x32.png'
+			rel='icon'
+			sizes='32x32'
+			type='image/png'
+		/>
+		<link
+			href='/images/favicon-16x16.png'
+			rel='icon'
+			sizes='16x16'
+			type='image/png'
+		/>
+		<script is:inline set:html={jsonLd} type='application/ld+json' />
+	</head>
+	<body>
+		<slot />
+	</body>
 </html>
 
 <style>
-  body {
-    /* stylelint-disable-next-line no-unknown-custom-properties */
-    font-family: var(--font-montserrat), sans-serif;
-  }
+	body {
+		/* stylelint-disable-next-line no-unknown-custom-properties */
+		font-family: var(--font-montserrat), sans-serif;
+	}
 </style>

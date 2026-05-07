@@ -1,7 +1,5 @@
 ---
-import type {
-	ExperienceEntry
-} from '@jh/data/user';
+import type { ExperienceEntry } from '@jh/data/user';
 
 import TechTag from './TechTag.astro';
 
@@ -10,99 +8,99 @@ type Props = ExperienceEntry;
 const { companyName, description, period, position, stack, url } = Astro.props;
 ---
 
-<article class="experience-card" data-experience-card>
-  <div class="experience-card-period">
-    <span class="body-xs text-primary-80 experience-card-period-text">
-      {period}
-    </span>
-  </div>
+<article class='experience-card' data-experience-card>
+	<div class='experience-card-period'>
+		<span class='body-xs text-primary-80 experience-card-period-text'>
+			{period}
+		</span>
+	</div>
 
-  <div class="experience-card-content">
-    <a
-      aria-label={`${position} · ${companyName}`}
-      class="experience-card-link"
-      href={url}
-      referrerpolicy="no-referrer"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <h3 class="experience-title body-md">
-        {position} · <span class="text-primary-100">{companyName}</span>
-      </h3>
-    </a>
+	<div class='experience-card-content'>
+		<a
+			aria-label={`${position} · ${companyName}`}
+			class='experience-card-link'
+			href={url}
+			referrerpolicy='no-referrer'
+			rel='noopener noreferrer'
+			target='_blank'
+		>
+			<h3 class='experience-title body-md'>
+				{position} · <span class='text-primary-100'>{companyName}</span>
+			</h3>
+		</a>
 
-    <p class="body-xs text-primary-80 experience-card-desc">
-      {description}
-    </p>
+		<p class='body-xs text-primary-80 experience-card-desc'>
+			{description}
+		</p>
 
-    <ul class="experience-card-stack">
-      {stack.map((tag) => <TechTag tag={tag} />)}
-    </ul>
-  </div>
+		<ul class='experience-card-stack'>
+			{stack.map((tag) => <TechTag tag={tag} />)}
+		</ul>
+	</div>
 </article>
 
 <style>
-  .experience-card {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 1rem;
-    border: 1px solid transparent;
-    border-radius: 1rem;
-    gap: 0.75rem;
-    transition: all 500ms ease-out;
-  }
+	.experience-card {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		padding: 1rem;
+		border: 1px solid transparent;
+		border-radius: 1rem;
+		gap: 0.75rem;
+		transition: all 500ms ease-out;
+	}
 
-  .experience-card-period {
-    display: flex;
-    max-width: 5rem;
-    flex-shrink: 0;
-    padding-top: 0.25rem;
-  }
+	.experience-card-period {
+		display: flex;
+		max-width: 5rem;
+		flex-shrink: 0;
+		padding-top: 0.25rem;
+	}
 
-  .experience-card-period-text {
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
+	.experience-card-period-text {
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
 
-  .experience-card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+	.experience-card-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
 
-  .experience-card-link {
-    display: flex;
-  }
+	.experience-card-link {
+		display: flex;
+	}
 
-  .experience-title {
-    font-weight: 700;
-    line-height: 1.25;
-    transition: color 300ms ease-in-out;
-  }
+	.experience-title {
+		font-weight: 700;
+		line-height: 1.25;
+		transition: color 300ms ease-in-out;
+	}
 
-  .experience-card-desc {
-    font-weight: 400;
-    line-height: 1.625;
-  }
+	.experience-card-desc {
+		font-weight: 400;
+		line-height: 1.625;
+	}
 
-  .experience-card-stack {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 0.5rem;
-  }
+	.experience-card-stack {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 0.5rem;
+	}
 
-  @media (width >= 768px) {
-    .experience-card {
-      flex-direction: row;
-      gap: 3rem;
-    }
-  }
+	@media (width >= 768px) {
+		.experience-card {
+			flex-direction: row;
+			gap: 3rem;
+		}
+	}
 
-  @media (width >= 1024px) {
-    .experience-card {
-      padding: 1.5rem;
-    }
-  }
+	@media (width >= 1024px) {
+		.experience-card {
+			padding: 1.5rem;
+		}
+	}
 </style>

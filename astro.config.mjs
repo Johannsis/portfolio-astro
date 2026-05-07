@@ -3,13 +3,13 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 export default defineConfig({
 	devToolbar: {
-		enabled: false
+		enabled: false,
 	},
 	experimental: {
 		queuedRendering: {
-			enabled: true
+			enabled: true,
 		},
-		rustCompiler: true
+		rustCompiler: true,
 	},
 	fonts: [
 		{
@@ -17,18 +17,18 @@ export default defineConfig({
 			display: 'swap',
 			name: 'Montserrat',
 			provider: fontProviders.google(),
-			weights: [300, 400, 500, 600, 700]
-		}
+			weights: [300, 400, 500, 600, 700],
+		},
 	],
 	integrations: [
 		sitemap({
 			changefreq: 'yearly',
 			lastmod: new Date(),
-			priority: 1
-		})
+			priority: 1,
+		}),
 	],
 	security: {
-		csp: true
+		csp: true,
 	},
-	site: 'https://johannsis.github.io/portfolio'
+	site: 'https://johannsis.github.io/portfolio',
 });

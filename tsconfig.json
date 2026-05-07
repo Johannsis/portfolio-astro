@@ -1,40 +1,40 @@
 {
-	"extends": "astro/tsconfigs/strictest",
-	"include": [".astro/types.d.ts", "**/*"],
-	"exclude": ["dist"],
 	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"esModuleInterop": true,
+		"exactOptionalPropertyTypes": false,
+		"forceConsistentCasingInFileNames": true,
+		"incremental": true,
+		"isolatedModules": true,
+		"jsx": "react-jsx",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
 		"paths": {
 			"@jh/*": ["./src/*"]
 		},
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"allowJs": true,
-		"jsx": "react-jsx",
-		"noEmit": true,
-		"allowUnreachableCode": false,
-		"allowUnusedLabels": false,
-		"exactOptionalPropertyTypes": false,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"sourceMap": true,
-		"removeComments": false,
-		"noImplicitAny": true,
-		"target": "esnext",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"skipLibCheck": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"noFallthroughCasesInSwitch": true,
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"incremental": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"verbatimModuleSyntax": true,
 		"plugins": [
 			{
 				"name": "@astrojs/ts-plugin"
 			}
-		]
-	}
+		],
+		"removeComments": false,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "esnext",
+		"verbatimModuleSyntax": true
+	},
+	"exclude": ["dist"],
+	"extends": "astro/tsconfigs/strictest",
+	"include": [".astro/types.d.ts", "**/*"]
 }

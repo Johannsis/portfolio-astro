@@ -8,21 +8,21 @@ interface Props {
 const { pageSections } = Astro.props;
 ---
 
-<nav aria-label="Page sections" class="header-sections body-2xs">
-  {pageSections.map((section) => <HeaderNavItem sectionName={section} />)}
+<nav aria-label='Page sections' class='header-sections body-2xs'>
+	{pageSections.map((section) => <HeaderNavItem sectionName={section} />)}
 </nav>
 
 <style>
-  .header-sections {
-    display: none;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-transform: uppercase;
-  }
+	.header-sections {
+		display: none;
+		flex-direction: column;
+		gap: 1.5rem;
+		text-transform: uppercase;
+	}
 
-  @media (width >= 1024px) {
-    .header-sections {
-      display: flex;
-    }
-  }
+	@media (width >= 1024px) {
+		.header-sections {
+			display: flex;
+		}
+	}
 </style>

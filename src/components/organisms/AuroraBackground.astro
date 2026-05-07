@@ -1,200 +1,200 @@
-<div aria-hidden="true" class="aurora">
-  <div
-    class="blob blob-glacier blob-drift"
-    style=" animation-delay: -2s;animation-direction: alternate;"
-  >
-  </div>
-  <div
-    class="blob blob-lagoon blob-orbit"
-    style=" animation-delay: -8s;animation-direction: reverse;"
-  >
-  </div>
+<div aria-hidden='true' class='aurora'>
+	<div
+		class='blob blob-glacier blob-drift'
+		style=' animation-delay: -2s;animation-direction: alternate;'
+	>
+	</div>
+	<div
+		class='blob blob-lagoon blob-orbit'
+		style=' animation-delay: -8s;animation-direction: reverse;'
+	>
+	</div>
 
-  <div
-    class="blob blob-cyan blob-drift"
-    style=" animation-delay: -12s;animation-direction: alternate-reverse;"
-  >
-  </div>
-  <div
-    class="blob blob-indigo blob-drift-slow"
-    style=" animation-delay: -15s;animation-direction: reverse;"
-  >
-  </div>
-  <div
-    class="blob blob-violet blob-orbit-slow"
-    style=" animation-delay: -20s;animation-direction: alternate;"
-  >
-  </div>
-  <div
-    class="blob blob-orchid blob-drift"
-    style=" animation-delay: -10s;animation-direction: alternate-reverse;"
-  >
-  </div>
-  <div
-    class="blob blob-rose blob-orbit"
-    style=" animation-delay: -18s;animation-direction: reverse;"
-  >
-  </div>
-  <div
-    class="blob blob-amber blob-drift"
-    style=" animation-delay: -24s;animation-direction: alternate;"
-  >
-  </div>
+	<div
+		class='blob blob-cyan blob-drift'
+		style=' animation-delay: -12s;animation-direction: alternate-reverse;'
+	>
+	</div>
+	<div
+		class='blob blob-indigo blob-drift-slow'
+		style=' animation-delay: -15s;animation-direction: reverse;'
+	>
+	</div>
+	<div
+		class='blob blob-violet blob-orbit-slow'
+		style=' animation-delay: -20s;animation-direction: alternate;'
+	>
+	</div>
+	<div
+		class='blob blob-orchid blob-drift'
+		style=' animation-delay: -10s;animation-direction: alternate-reverse;'
+	>
+	</div>
+	<div
+		class='blob blob-rose blob-orbit'
+		style=' animation-delay: -18s;animation-direction: reverse;'
+	>
+	</div>
+	<div
+		class='blob blob-amber blob-drift'
+		style=' animation-delay: -24s;animation-direction: alternate;'
+	>
+	</div>
 </div>
 
 <style>
-  .aurora {
-    position: fixed;
-    z-index: 0;
-    overflow: hidden;
-    inset: 0;
-    pointer-events: none;
-  }
+	.aurora {
+		position: fixed;
+		z-index: 0;
+		overflow: hidden;
+		inset: 0;
+		pointer-events: none;
+	}
 
-  .blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 60%;
-  }
+	.blob {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(60px);
+		opacity: 60%;
+	}
 
-  /* Sizes & positions */
+	/* Sizes & positions */
 
-  .blob-glacier {
-    top: -10%;
-    left: -8%;
-    width: 65%;
-    height: 65%;
-    background: radial-gradient(
-      closest-side circle at center in oklab,
-      var(--aurora-glacier),
-      transparent 100%
-    );
-  }
+	.blob-glacier {
+		top: -10%;
+		left: -8%;
+		width: 65%;
+		height: 65%;
+		background: radial-gradient(
+			closest-side circle at center in oklab,
+			var(--aurora-glacier),
+			transparent 100%
+		);
+	}
 
-  .blob-lagoon {
-    top: -8%;
-    right: -8%;
-    width: 72%;
-    height: 72%;
-    background: radial-gradient(
-      closest-side circle at center in oklab,
-      var(--aurora-lagoon),
-      transparent 100%
-    );
-  }
+	.blob-lagoon {
+		top: -8%;
+		right: -8%;
+		width: 72%;
+		height: 72%;
+		background: radial-gradient(
+			closest-side circle at center in oklab,
+			var(--aurora-lagoon),
+			transparent 100%
+		);
+	}
 
-  .blob-cyan {
-    bottom: -10%;
-    left: 8%;
-    width: 68%;
-    height: 68%;
-    background: radial-gradient(
-      closest-side circle at center in oklab,
-      var(--aurora-cyan),
-      transparent 100%
-    );
-  }
+	.blob-cyan {
+		bottom: -10%;
+		left: 8%;
+		width: 68%;
+		height: 68%;
+		background: radial-gradient(
+			closest-side circle at center in oklab,
+			var(--aurora-cyan),
+			transparent 100%
+		);
+	}
 
-  .blob-indigo {
-    right: -6%;
-    bottom: -8%;
-    width: 70%;
-    height: 70%;
-    background: radial-gradient(
-      closest-side circle at center in oklab,
-      var(--aurora-indigo),
-      transparent 100%
-    );
-  }
+	.blob-indigo {
+		right: -6%;
+		bottom: -8%;
+		width: 70%;
+		height: 70%;
+		background: radial-gradient(
+			closest-side circle at center in oklab,
+			var(--aurora-indigo),
+			transparent 100%
+		);
+	}
 
-  .blob-violet {
-    bottom: -8%;
-    left: -6%;
-    width: 74%;
-    height: 74%;
-    background: radial-gradient(
-      closest-side circle at center in oklab,
-      var(--aurora-violet),
-      transparent 100%
-    );
-  }
+	.blob-violet {
+		bottom: -8%;
+		left: -6%;
+		width: 74%;
+		height: 74%;
+		background: radial-gradient(
+			closest-side circle at center in oklab,
+			var(--aurora-violet),
+			transparent 100%
+		);
+	}
 
-  .blob-orchid {
-    top: 24%;
-    left: -4%;
-    width: 52%;
-    height: 52%;
-    background: radial-gradient(
-      closest-side circle at center in oklab,
-      var(--aurora-orchid),
-      transparent 100%
-    );
-  }
+	.blob-orchid {
+		top: 24%;
+		left: -4%;
+		width: 52%;
+		height: 52%;
+		background: radial-gradient(
+			closest-side circle at center in oklab,
+			var(--aurora-orchid),
+			transparent 100%
+		);
+	}
 
-  .blob-rose {
-    top: -6%;
-    right: 8%;
-    width: 48%;
-    height: 48%;
-    background: radial-gradient(
-      closest-side circle at center in oklab,
-      var(--aurora-rose),
-      transparent 100%
-    );
-  }
+	.blob-rose {
+		top: -6%;
+		right: 8%;
+		width: 48%;
+		height: 48%;
+		background: radial-gradient(
+			closest-side circle at center in oklab,
+			var(--aurora-rose),
+			transparent 100%
+		);
+	}
 
-  .blob-amber {
-    right: 16%;
-    bottom: -6%;
-    width: 46%;
-    height: 46%;
-    background: radial-gradient(
-      closest-side circle at center in oklab,
-      var(--aurora-amber),
-      transparent 100%
-    );
-  }
+	.blob-amber {
+		right: 16%;
+		bottom: -6%;
+		width: 46%;
+		height: 46%;
+		background: radial-gradient(
+			closest-side circle at center in oklab,
+			var(--aurora-amber),
+			transparent 100%
+		);
+	}
 
-  /* Animations */
+	/* Animations */
 
-  @keyframes blob-drift-kf {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-      transform: translate(4%, 6%) scale(1.05);
-    }
-    66% {
-      transform: translate(-3%, 3%) scale(0.97);
-    }
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-  }
+	@keyframes blob-drift-kf {
+		0% {
+			transform: translate(0, 0) scale(1);
+		}
+		33% {
+			transform: translate(4%, 6%) scale(1.05);
+		}
+		66% {
+			transform: translate(-3%, 3%) scale(0.97);
+		}
+		100% {
+			transform: translate(0, 0) scale(1);
+		}
+	}
 
-  @keyframes blob-orbit-kf {
-    0% {
-      transform: rotate(0deg) translate(5%, 3%) rotate(0deg) scale(1);
-    }
-    100% {
-      transform: rotate(360deg) translate(5%, 3%) rotate(-360deg) scale(1.08);
-    }
-  }
+	@keyframes blob-orbit-kf {
+		0% {
+			transform: rotate(0deg) translate(5%, 3%) rotate(0deg) scale(1);
+		}
+		100% {
+			transform: rotate(360deg) translate(5%, 3%) rotate(-360deg) scale(1.08);
+		}
+	}
 
-  .blob-drift {
-    animation: blob-drift-kf 18s ease-in-out infinite;
-  }
+	.blob-drift {
+		animation: blob-drift-kf 18s ease-in-out infinite;
+	}
 
-  .blob-drift-slow {
-    animation: blob-drift-kf 28s ease-in-out infinite;
-  }
+	.blob-drift-slow {
+		animation: blob-drift-kf 28s ease-in-out infinite;
+	}
 
-  .blob-orbit {
-    animation: blob-orbit-kf 22s linear infinite;
-  }
+	.blob-orbit {
+		animation: blob-orbit-kf 22s linear infinite;
+	}
 
-  .blob-orbit-slow {
-    animation: blob-orbit-kf 34s linear infinite;
-  }
+	.blob-orbit-slow {
+		animation: blob-orbit-kf 34s linear infinite;
+	}
 </style>

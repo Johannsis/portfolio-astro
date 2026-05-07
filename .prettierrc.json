@@ -1,5 +1,4 @@
 {
-	"ignorePatterns": ["dist", "node_modules", "bun.lock"],
 	"overrides": [
 		{
 			"files": "*.astro",

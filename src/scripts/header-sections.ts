@@ -14,7 +14,8 @@ if (sectionLinks.length > 0) {
 
 				if (!(link instanceof HTMLElement)) return;
 
-				const isActive = entry.isIntersecting && entry.intersectionRatio >= 0.35;
+				const isActive =
+					entry.isIntersecting && entry.intersectionRatio >= 0.35;
 				link.classList.toggle('is-active', isActive);
 			}
 		},

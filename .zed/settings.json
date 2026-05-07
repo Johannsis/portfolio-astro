@@ -21,12 +21,13 @@
 			"formatter": {
 				"external": {
 					"arguments": [
+						"prettier",
 						"--stdin-filepath",
 						"{buffer_path}",
 						"--config",
 						".prettierrc.json"
 					],
-					"command": "prettier"
+					"command": "bunx"
 				}
 			},
 			"language_servers": ["eslint", "..."],

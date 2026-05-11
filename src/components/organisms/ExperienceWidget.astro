@@ -14,50 +14,19 @@ const { experience } = Astro.props;
 
 <Section ariaLabel='Work experience' id='experience'>
 	<SectionTitle title='experience' />
-	<div class='experience-list'>
+	<div
+		class='group/list flex grow flex-col gap-8 transition-all duration-500 ease-out'
+	>
 		{experience.map((entry) => <ExperienceCard {...entry} />)}
 	</div>
 	<a
 		aria-label='View Full Resume (opens PDF in new tab)'
-		class='resume-link text-primary-80'
+		class='text-primary-80 hover:text-primary-100 mt-4 flex items-center gap-2 fill-current font-semibold transition-colors duration-200 ease-in-out lg:p-4'
 		href='/assets/Johannes-Hoersch-CV.pdf'
 		rel='noopener noreferrer'
 		target='_blank'
 	>
-		<span class='body-md resume-link-label'>View Full Resume</span>
+		<span class='body-md font-medium'>View Full Resume</span>
 		<Icon name='arrowRight' />
 	</a>
 </Section>
-
-<style>
-	.experience-list {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-		gap: 2rem;
-		transition: all 500ms ease-out;
-	}
-
-	.resume-link {
-		display: flex;
-		align-items: center;
-		margin-top: 1rem;
-		font-weight: 600;
-		gap: 0.5rem;
-		transition: color 200ms ease-in-out;
-	}
-
-	.resume-link:hover {
-		color: var(--color-primary-100);
-	}
-
-	.resume-link-label {
-		font-weight: 500;
-	}
-
-	@media (width >= 1024px) {
-		.resume-link {
-			padding: 1rem;
-		}
-	}
-</style>

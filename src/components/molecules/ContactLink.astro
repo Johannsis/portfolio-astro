@@ -13,7 +13,7 @@ const target = url.startsWith('mailto:') ? null : '_blank';
 
 <a
 	aria-label={ariaLabel}
-	class='contact-link text-primary-80'
+	class='text-primary-80 hover:text-primary-100 duration-300 ease-out hover:scale-110'
 	href={url}
 	referrerpolicy='no-referrer'
 	rel='noopener noreferrer'
@@ -21,17 +21,3 @@ const target = url.startsWith('mailto:') ? null : '_blank';
 >
 	<Icon name={icon} />
 </a>
-
-<style>
-	.contact-link {
-		display: inline-flex;
-		transition:
-			color 300ms ease-out,
-			transform 300ms ease-out;
-	}
-
-	.contact-link:hover {
-		color: var(--color-primary-100);
-		transform: scale(1.1);
-	}
-</style>

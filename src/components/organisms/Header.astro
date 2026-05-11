@@ -15,73 +15,26 @@ interface Props {
 const { job, location, motto, name, pageSections, socialLinks } = Astro.props;
 ---
 
-<header class='site-header'>
-	<div class='site-header-top'>
-		<h1 class='title-gradient titles-4xl site-header-name'>{name}</h1>
-		<p class='text-primary-100 titles-xl site-header-job'>{job}</p>
-		<p class='body-sm text-primary-80 site-header-location'>
+<header
+	class='mb-20 flex min-h-60 flex-col gap-6 lg:fixed lg:mb-0 lg:max-h-dvh lg:min-h-[90dvh] lg:max-w-[33%] lg:justify-between 2xl:max-w-[calc(20%-0.75rem)]'
+>
+	<div class='flex w-full flex-col gap-4'>
+		<h1
+			class='titles-4xl [background-image:var(--title-radial-gradient)] bg-clip-text leading-tight font-extrabold tracking-tight text-transparent lg:leading-12'
+		>
+			{name}
+		</h1>
+		<p class='titles-xl text-primary-100 font-bold tracking-tight'>
+			{job}
+		</p>
+		<p class='body-sm text-primary-80 font-medium'>
 			Based in {location}
 		</p>
-		<p class='body-sm text-primary-80 site-header-motto'>{motto}</p>
+		<p class='body-sm text-primary-80 mt-2 max-w-xs'>
+			{motto}
+		</p>
 	</div>
 
 	<HeaderSections pageSections={pageSections} />
 	<ContactLinks socialLinks={socialLinks} />
 </header>
-
-<style>
-	.site-header {
-		display: flex;
-		min-height: 15rem;
-		flex-direction: column;
-		margin-bottom: 5rem;
-		gap: 1.5rem;
-	}
-
-	.site-header-top {
-		display: flex;
-		width: 100%;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	.site-header-name {
-		font-weight: 800;
-		letter-spacing: -0.025em;
-		line-height: 1.25;
-	}
-
-	.site-header-job {
-		font-weight: 700;
-		letter-spacing: -0.025em;
-	}
-
-	.site-header-location {
-		font-weight: 500;
-	}
-
-	.site-header-motto {
-		max-width: 20rem;
-		margin-top: 0.5rem;
-	}
-
-	@media (width >= 1024px) {
-		.site-header {
-			position: fixed;
-			max-width: 33%;
-			min-height: 90dvh;
-			max-height: 100dvh;
-			justify-content: space-between;
-			margin-bottom: 0;
-		}
-		.site-header-name {
-			line-height: 3rem;
-		}
-	}
-
-	@media (width >= 1536px) {
-		.site-header {
-			max-width: calc(20% - 0.75rem);
-		}
-	}
-</style>

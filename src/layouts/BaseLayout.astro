@@ -2,8 +2,6 @@
 /* eslint-disable astro/no-set-html-directive */
 import { Font } from 'astro:assets';
 
-import '@jh/styles/global.css';
-
 interface Props {
 	description: string;
 	jsonLd: Record<string, unknown>;
@@ -16,7 +14,10 @@ interface Props {
 const { description, jsonLd, keywords, siteName, siteUrl, title } = Astro.props;
 ---
 
-<html lang='en'>
+<html
+	class='bg-primary-10 scroll-smooth font-[var(--font-montserrat)]'
+	lang='en'
+>
 	<head>
 		<Font
 			cssVariable='--font-montserrat'
@@ -58,14 +59,7 @@ const { description, jsonLd, keywords, siteName, siteUrl, title } = Astro.props;
 		/>
 		<script is:inline set:html={jsonLd} type='application/ld+json' />
 	</head>
-	<body>
+	<body class='m-0 antialiased'>
 		<slot />
 	</body>
 </html>
-
-<style>
-	body {
-		/* stylelint-disable-next-line no-unknown-custom-properties */
-		font-family: var(--font-montserrat), sans-serif;
-	}
-</style>

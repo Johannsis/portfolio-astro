@@ -8,99 +8,45 @@ type Props = ExperienceEntry;
 const { companyName, description, period, position, stack, url } = Astro.props;
 ---
 
-<article class='experience-card' data-experience-card>
-	<div class='experience-card-period'>
-		<span class='body-xs text-primary-80 experience-card-period-text'>
+<article
+	class:list={[
+		'group flex grow flex-col gap-3 rounded-2xl border border-transparent p-4 transition-all duration-500 ease-out md:flex-row md:gap-12 lg:p-6',
+		'lg:group-hover/list:scale-[0.98] lg:group-hover/list:opacity-50',
+		'lg:hover:scale-105! lg:hover:opacity-100!',
+		'lg:hover:glassmorphism-background lg:hover:shadow-2xl',
+		'data-[active=true]:glassmorphism-background data-[active=true]:scale-105! data-[active=true]:shadow-2xl',
+	]}
+	data-experience-card
+>
+	<div class='flex max-w-20 shrink-0 pt-1'>
+		<span class='body-xs text-primary-80 font-medium tracking-wide uppercase'>
 			{period}
 		</span>
 	</div>
-
-	<div class='experience-card-content'>
+	<div class='flex flex-col gap-3'>
 		<a
 			aria-label={`${position} · ${companyName}`}
-			class='experience-card-link'
+			class='flex'
 			href={url}
 			referrerpolicy='no-referrer'
 			rel='noopener noreferrer'
 			target='_blank'
 		>
-			<h3 class='experience-title body-md'>
+			<h3
+				class:list={[
+					'body-md leading-tight! font-bold transition-colors duration-300 ease-in-out',
+					'lg:group-hover:text-primary-100',
+					'max-lg:group-data-[active=true]:text-primary-100',
+				]}
+			>
 				{position} · <span class='text-primary-100'>{companyName}</span>
 			</h3>
 		</a>
-
-		<p class='body-xs text-primary-80 experience-card-desc'>
+		<p class='body-xs text-primary-80 leading-relaxed font-normal'>
 			{description}
 		</p>
-
-		<ul class='experience-card-stack'>
+		<ul class='flex flex-row flex-wrap gap-2'>
 			{stack.map((tag) => <TechTag tag={tag} />)}
 		</ul>
 	</div>
 </article>
-
-<style>
-	.experience-card {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-		padding: 1rem;
-		border: 1px solid transparent;
-		border-radius: 1rem;
-		gap: 0.75rem;
-		transition: all 500ms ease-out;
-	}
-
-	.experience-card-period {
-		display: flex;
-		max-width: 5rem;
-		flex-shrink: 0;
-		padding-top: 0.25rem;
-	}
-
-	.experience-card-period-text {
-		font-weight: 500;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-	}
-
-	.experience-card-content {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-	}
-
-	.experience-card-link {
-		display: flex;
-	}
-
-	.experience-title {
-		font-weight: 700;
-		line-height: 1.25;
-		transition: color 300ms ease-in-out;
-	}
-
-	.experience-card-desc {
-		font-weight: 400;
-		line-height: 1.625;
-	}
-
-	.experience-card-stack {
-		display: flex;
-		flex-flow: row wrap;
-		gap: 0.5rem;
-	}
-
-	@media (width >= 768px) {
-		.experience-card {
-			flex-direction: row;
-			gap: 3rem;
-		}
-	}
-
-	@media (width >= 1024px) {
-		.experience-card {
-			padding: 1.5rem;
-		}
-	}
-</style>

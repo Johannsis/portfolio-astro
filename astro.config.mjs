@@ -1,5 +1,6 @@
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
+import UnoCSS from 'unocss/astro';
 
 export default defineConfig({
 	devToolbar: {
@@ -21,6 +22,7 @@ export default defineConfig({
 		},
 	],
 	integrations: [
+		UnoCSS(),
 		sitemap({
 			changefreq: 'yearly',
 			lastmod: new Date(),

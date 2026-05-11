@@ -6,34 +6,8 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<h2 class='section-title titles-lg text-primary-100'>
+<h2
+	class='titles-lg text-primary-100 sticky top-0 z-10 w-full py-6 font-bold tracking-wider uppercase lg:sr-only'
+>
 	{title}
 </h2>
-
-<style>
-	.section-title {
-		position: sticky;
-		z-index: 10;
-		top: 0;
-		width: 100%;
-		padding-top: 1.5rem;
-		padding-bottom: 1.5rem;
-		font-weight: 700;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-	}
-
-	@media (width >= 1024px) {
-		.section-title {
-			position: absolute;
-			overflow: hidden;
-			width: 1px;
-			height: 1px;
-			padding: 0;
-			border-width: 0;
-			margin: -1px;
-			clip-path: inset(100%);
-			white-space: nowrap;
-		}
-	}
-</style>

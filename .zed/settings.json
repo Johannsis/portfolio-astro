@@ -2,7 +2,6 @@
 	"code_actions_on_format": {
 		"source.fixAll": true
 	},
-	"ensure_final_newline_on_save": true,
 	"format_on_save": "on",
 	"formatter": [
 		{
@@ -12,7 +11,7 @@
 		}
 	],
 	"prettier": { "allowed": false },
-	"language_servers": ["!eslint", "..."],
+	"language_servers": ["!eslint", "!typescript-language-server", "..."],
 	"languages": {
 		"Astro": {
 			"code_actions_on_format": {
@@ -59,7 +58,7 @@
 				"stylelint": {
 					"configFile": ".stylelintrc.json",
 					"packageManager": "bun",
-					"validate": ["css", "astro"]
+					"validate": ["css"]
 				}
 			}
 		}

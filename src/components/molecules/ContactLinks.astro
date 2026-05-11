@@ -10,26 +10,13 @@ interface Props {
 const { socialLinks } = Astro.props;
 ---
 
-<nav aria-label='Contact links' class='contact-links'>
+<nav
+	aria-label='Contact links'
+	class='flex h-fit flex-row gap-5 lg:relative lg:mb-36'
+>
 	{
 		socialLinks.map(({ ariaLabel, icon, url }) => (
 			<ContactLink ariaLabel={ariaLabel} icon={icon} url={url} />
 		))
 	}
 </nav>
-
-<style>
-	.contact-links {
-		display: flex;
-		height: fit-content;
-		flex-direction: row;
-		gap: 1.25rem;
-	}
-
-	@media (width >= 1024px) {
-		.contact-links {
-			position: relative;
-			margin-bottom: 9rem;
-		}
-	}
-</style>

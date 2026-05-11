@@ -6,57 +6,21 @@ interface Props {
 const { currentYear } = Astro.props;
 ---
 
-<footer class='site-footer text-primary-100'>
-	<div class='site-footer-inner'>
-		<p class='body-xs site-footer-credit'>
+<footer class='text-primary-100 z-10 mt-12 w-full'>
+	<div
+		class='border-secondary-100/15 mx-auto flex w-full max-w-7xl flex-col gap-3 border-t py-10 lg:flex-row lg:items-center lg:justify-between lg:py-12'
+	>
+		<p class='body-xs leading-relaxed font-normal'>
 			Designed with <span aria-hidden='true'>💚</span> in <span
-				class='text-primary-100 font-600'
+				class='text-primary-100 font-semibold'
 			>
 				Next.js
-			</span> and <span class='text-primary-100 font-600'>Tailwind CSS</span>,
-			deployed in GitHub Pages.
+			</span> and <span class='text-primary-100 font-semibold'
+				>Tailwind CSS</span
+			>, deployed in GitHub Pages.
 		</p>
-		<p class='body-xs text-primary-80 site-footer-copy'>
+		<p class='body-xs text-primary-80 leading-relaxed font-normal'>
 			© {currentYear} Johannes Hoersch
 		</p>
 	</div>
 </footer>
-
-<style>
-	.site-footer {
-		z-index: 10;
-		width: 100%;
-		margin-top: 3rem;
-	}
-
-	.site-footer-inner {
-		display: flex;
-		width: 100%;
-		max-width: 80rem;
-		flex-direction: column;
-		padding-top: 2.5rem;
-		padding-bottom: 2.5rem;
-		border-top: 1px solid oklch(0.24 0.02 200deg / 15%);
-		gap: 0.75rem;
-	}
-
-	.site-footer-credit {
-		font-weight: 400;
-		line-height: 1.625;
-	}
-
-	.site-footer-copy {
-		font-weight: 400;
-		line-height: 1.625;
-	}
-
-	@media (width >= 1024px) {
-		.site-footer-inner {
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-			padding-top: 3rem;
-			padding-bottom: 3rem;
-		}
-	}
-</style>

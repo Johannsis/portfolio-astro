@@ -120,6 +120,7 @@
 		"@stylistic/yield-star-spacing": "off",
 		"eslint/curly": "off",
 		"eslint/max-lines": "off",
+		"eslint/new-cap": "off",
 		"eslint/no-magic-numbers": "off",
 		"eslint/no-ternary": "off",
 		"eslint/no-undef": "off",
@@ -194,6 +195,12 @@
 		"perfectionist/sort-switch-case": "error",
 		"perfectionist/sort-union-types": "error",
 		"perfectionist/sort-variable-declarations": "error",
+		"typescript/consistent-type-imports": "error",
+		"typescript/explicit-function-return-type": [
+			"error",
+			{ "allowTypedFunctionExpressions": false }
+		],
+		"typescript/no-explicit-any": "error",
 		"unicorn/filename-case": "off",
 		"unicorn/no-null": "off"
 	}

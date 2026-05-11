@@ -44,17 +44,10 @@ const icon = iconMap[name];
 
 <svg
 	aria-hidden='true'
-	class='icon'
+	class='fill-current'
 	height={height ?? icon.defaultHeight}
 	viewBox={viewBox ?? icon.defaultViewBox}
 	width={width ?? icon.defaultWidth}
 >
 	<path d={icon.path} fill-rule={icon.fillRule}></path>
 </svg>
-
-<style>
-	.icon {
-		display: block;
-		fill: currentcolor;
-	}
-</style>

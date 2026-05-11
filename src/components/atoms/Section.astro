@@ -10,16 +10,8 @@ const { ariaLabel, className = '', id } = Astro.props;
 
 <section
 	aria-label={ariaLabel}
-	class:list={[`section`.trim(), `${className}`.trim()]}
+	class:list={['flex flex-col gap-4', className]}
 	id={id}
 >
 	<slot />
 </section>
-
-<style>
-	.section {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-</style>

@@ -7,39 +7,12 @@ const { sectionName } = Astro.props;
 ---
 
 <a
-	class='nav-link text-primary-80'
+	class='group text-primary-80 hover:text-primary-100 flex w-fit flex-row items-center gap-4 transition-colors duration-300'
 	data-section-link={sectionName}
 	href={`#${sectionName}`}
 >
-	<span class='nav-line'></span>
+	<span
+		class='bg-primary-80 group-hover:bg-primary-100 h-px w-8 transition-all duration-300 ease-in-out group-hover:w-16'
+	></span>
 	{sectionName}
 </a>
-
-<style>
-	.nav-link {
-		display: flex;
-		width: fit-content;
-		align-items: center;
-		gap: 1rem;
-		transition: color 300ms;
-	}
-
-	.nav-link:hover {
-		color: var(--color-primary-100);
-	}
-
-	.nav-line {
-		display: block;
-		width: 2rem;
-		height: 1px;
-		background-color: var(--color-primary-80);
-		transition:
-			background-color 300ms,
-			width 300ms;
-	}
-
-	.nav-link:hover .nav-line {
-		width: 4rem;
-		background-color: var(--color-primary-100);
-	}
-</style>

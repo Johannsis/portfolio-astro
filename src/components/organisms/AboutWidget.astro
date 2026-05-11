@@ -4,9 +4,9 @@ import SectionTitle from '@jh/components/atoms/SectionTitle.astro';
 import AboutReadMore from '@jh/components/molecules/AboutReadMore.astro';
 ---
 
-<Section ariaLabel='About me' className='about-widget' id='about'>
+<Section ariaLabel='About me' className='lg:p-4!' id='about'>
 	<SectionTitle title='about' />
-	<p class='body-xs text-primary-80 about-widget-intro'>
+	<p class='body-xs text-primary-80 leading-relaxed font-normal'>
 		I&apos;m a detail-oriented Software Engineer passionate about building
 		performant, pixel-perfect, and accessible interfaces that combine creative
 		design with maintainable engineering. I love integrating cutting-edge
@@ -16,16 +16,3 @@ import AboutReadMore from '@jh/components/molecules/AboutReadMore.astro';
 	</p>
 	<AboutReadMore />
 </Section>
-
-<style>
-	.about-widget-intro {
-		font-weight: 400;
-		line-height: 1.625;
-	}
-
-	@media (width >= 1024px) {
-		:global(.about-widget) {
-			padding: 1rem;
-		}
-	}
-</style>

@@ -1,4 +1,8 @@
 {
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"endOfLine": "lf",
+	"jsxSingleQuote": true,
 	"overrides": [
 		{
 			"files": "*.astro",
@@ -18,5 +22,13 @@
 			}
 		}
 	],
-	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
+	"parser": "astro",
+	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+	"printWidth": 80,
+	"quoteProps": "as-needed",
+	"semi": true,
+	"singleQuote": true,
+	"tabWidth": 2,
+	"trailingComma": "all",
+	"useTabs": true
 }

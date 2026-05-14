@@ -29,6 +29,9 @@ export default defineConfig({
 			priority: 1,
 		}),
 	],
+	markdown: {
+		syntaxHighlight: 'prism',
+	},
 	security: {
 		csp: true,
 	},

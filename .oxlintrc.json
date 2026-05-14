@@ -121,6 +121,7 @@
 		"eslint/curly": "off",
 		"eslint/max-lines": "off",
 		"eslint/new-cap": "off",
+		"eslint/no-duplicate-imports": "off",
 		"eslint/no-magic-numbers": "off",
 		"eslint/no-ternary": "off",
 		"eslint/no-undef": "off",

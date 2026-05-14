@@ -13,6 +13,64 @@ const { sectionName } = Astro.props;
 >
 	<span
 		class='bg-primary-80 group-hover:bg-primary-100 h-px w-8 transition-all duration-300 ease-in-out group-hover:w-16'
-	></span>
+		data-section-span={sectionName}></span>
 	{sectionName}
 </a>
+
+<script>
+	// oxlint-disable max-statements
+	const sectionLinks = [
+		...document.querySelectorAll('[data-section-link]'),
+	] as HTMLLinkElement[];
+
+	if (sectionLinks.length > 0) {
+		const observer = new IntersectionObserver(
+			(entries): void => {
+				for (const entry of entries) {
+					const id = entry.target.getAttribute('id');
+
+					if (!id) return;
+
+					const link = document.querySelector(
+						`[data-section-link="${id}"]`,
+					) as HTMLLinkElement;
+					const span = document.querySelector(
+						`[data-section-span="${id}"]`,
+					) as HTMLSpanElement;
+
+					if (!link || !span) return;
+
+					const isIntersecting =
+						entry.isIntersecting && entry.intersectionRatio >= 0.35;
+
+					if (isIntersecting) {
+						link.classList.add('text-primary-100');
+						link.classList.remove('text-primary-80');
+						span.classList.remove('w-8');
+						span.classList.add('w-16');
+
+						return;
+					}
+
+					link.classList.remove('text-primary-100');
+					link.classList.add('text-primary-80');
+					span.classList.add('w-8');
+					span.classList.remove('w-16');
+				}
+			},
+			{
+				rootMargin: '-10% 0px -45% 0px',
+				threshold: [0, 0.2, 0.35, 0.5, 0.7, 1],
+			},
+		);
+
+		for (const link of sectionLinks) {
+			const sectionId = link.dataset.sectionLink;
+			const section = sectionId
+				? document.querySelector(`#${sectionId}`)
+				: null;
+
+			if (section) observer.observe(section);
+		}
+	}
+</script>

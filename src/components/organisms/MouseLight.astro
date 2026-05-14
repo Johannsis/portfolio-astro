@@ -1,5 +1,46 @@
-<div aria-hidden='true' class='mouse-light' data-mouse-light>
-	<div class='mouse-light-inner'></div>
+<div
+	aria-hidden='true'
+	class='pointer-events-none fixed top-0 left-0 z-50 hidden mix-blend-screen lg:block'
+	data-mouse-light
+	style={{
+		transform: 'translate(-9999px, -9999px)',
+		willChange: 'transform',
+	}}
+>
+	<div
+		class='bg-mouse-inner-light size-200 rounded-full opacity-80 blur-[55px]'
+	>
+	</div>
 </div>
 
-<script src='../../scripts/mouse-light.ts'></script>
+<script>
+	const light = document.querySelector('[data-mouse-light]');
+
+	if (
+		light instanceof HTMLElement &&
+		globalThis.matchMedia('(min-width: 1024px)').matches
+	) {
+		let frameId: null | number = null;
+		let lastX = -9999;
+		let lastY = -9999;
+
+		const update = (): void => {
+			const lightSize = 400;
+			light.style.transform = `translate(${lastX - lightSize}px, ${lastY - lightSize}px)`;
+			frameId = null;
+		};
+
+		const handlePointerMove = (event: PointerEvent): void => {
+			lastX = event.clientX;
+			lastY = event.clientY;
+
+			if (frameId !== null) return;
+
+			frameId = globalThis.requestAnimationFrame(update);
+		};
+
+		globalThis.addEventListener('pointermove', handlePointerMove, {
+			passive: true,
+		});
+	}
+</script>

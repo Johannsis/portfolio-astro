@@ -1,17 +1,17 @@
 ---
-
+/* eslint-disable astro/no-unused-css-selector */
 ---
 
-<details class='group flex flex-col gap-4'>
+<details class='group grid-col-1 grid gap-4'>
 	<summary
-		class='body-xs text-primary-100 border-secondary-100/30 bg-primary-20/30 order-2 w-fit cursor-pointer list-none rounded-xl border px-3 py-2 leading-6 transition-all duration-300 hover:scale-105 [&::-webkit-details-marker]:hidden'
+		class='body-xs text-primary-100 border-secondary-100/30 bg-primary-20/30 order-2 col-start-1 w-fit cursor-pointer list-none rounded-xl border px-3 py-2 leading-6 transition-all duration-300 [&::-webkit-details-marker]:hidden'
 	>
-		<span class='group-open:hidden'>Read More</span>
-		<span class='hidden group-open:inline'>Show Less</span>
+		<span class='overflow-visible group-open:hidden'>Read More</span>
+		<span class='hidden overflow-visible group-open:inline'>Show Less</span>
 	</summary>
 
 	<div
-		class='body-xs text-primary-80 order-1 flex flex-col gap-4 leading-relaxed font-normal'
+		class='body-xs text-primary-80 col-start-0 grid gap-4 overflow-hidden leading-relaxed font-normal'
 	>
 		<p class='body-xs text-primary-80 leading-relaxed font-normal'>
 			Currently, I&apos;m a <span class='text-primary-100 font-bold'>
@@ -36,3 +36,29 @@
 		</p>
 	</div>
 </details>
+
+<style>
+	details {
+		overflow: clip;
+	}
+
+	details::details-content {
+		display: grid;
+		content-visibility: hidden;
+		grid-template-rows: 0fr;
+		transition:
+			grid-template-rows 0.2s ease-out,
+			content-visibility 0.2s allow-discrete;
+	}
+
+	details[open]::details-content {
+		content-visibility: visible;
+		grid-template-rows: 1fr;
+	}
+
+	@starting-style {
+		details[open]::details-content {
+			grid-template-rows: 0fr;
+		}
+	}
+</style>

@@ -1,0 +1,113 @@
+:root {
+	--aurora-amber: color-mix(
+		in oklab,
+		var(--color-secondary-90) 24%,
+		var(--color-primary-10)
+	);
+	--aurora-cyan: color-mix(
+		in oklab,
+		var(--color-secondary-70) 26%,
+		var(--color-primary-10)
+	);
+	--aurora-glacier: color-mix(
+		in oklab,
+		var(--color-secondary-60) 34%,
+		var(--color-primary-10)
+	);
+	--aurora-indigo: color-mix(
+		in oklab,
+		var(--color-secondary-40) 32%,
+		var(--color-primary-10)
+	);
+	--aurora-lagoon: color-mix(
+		in oklab,
+		var(--color-secondary-50) 30%,
+		var(--color-primary-10)
+	);
+	--aurora-orchid: color-mix(
+		in oklab,
+		var(--color-secondary-110) 28%,
+		var(--color-primary-10)
+	);
+	--aurora-rose: color-mix(
+		in oklab,
+		var(--color-secondary-80) 26%,
+		var(--color-primary-10)
+	);
+	--aurora-violet: color-mix(
+		in oklab,
+		var(--color-secondary-100) 28%,
+		var(--color-primary-10)
+	);
+	--color-primary-10: oklch(0.1 0.02 258deg);
+	--color-primary-100: oklch(0.95 0.02 258deg);
+	--color-primary-20: oklch(0.2 0.02 258deg);
+	--color-primary-30: oklch(0.3 0.02 258deg);
+	--color-primary-40: oklch(0.4 0.02 258deg);
+	--color-primary-50: oklch(0.5 0.02 258deg);
+	--color-primary-60: oklch(0.6 0.02 258deg);
+	--color-primary-70: oklch(0.7 0.02 258deg);
+	--color-primary-80: oklch(0.8 0.02 258deg);
+	--color-primary-90: oklch(0.9 0.02 258deg);
+	--color-secondary-100: oklch(0.62 0.2 299deg);
+	--color-secondary-110: oklch(0.66 0.22 332deg);
+	--color-secondary-30: oklch(0.46 0.18 245deg);
+	--color-secondary-40: oklch(0.58 0.2 262deg);
+	--color-secondary-50: oklch(0.68 0.2 188deg);
+	--color-secondary-60: oklch(0.72 0.18 205deg);
+	--color-secondary-70: oklch(0.8 0.14 220deg);
+	--color-secondary-80: oklch(0.72 0.16 20deg);
+	--color-secondary-90: oklch(0.8 0.15 78deg);
+	--mouse-light-gradient: color-mix(
+		in oklab,
+		var(--color-secondary-100) 0.01%,
+		var(--color-primary-10)
+	);
+	--title-radial-gradient: linear-gradient(
+		to top in oklab,
+		var(--color-secondary-50) 0%,
+		var(--color-primary-100) 60%,
+		var(--color-primary-100) 100%
+	);
+}
+
+html,
+body {
+	min-height: 100dvh;
+}
+
+@keyframes blob-drift {
+	0% {
+		transform: translate3d(-65vw, -52vh, 0) scale(0.9);
+	}
+	20% {
+		transform: translate3d(52vw, -44vh, 0) scale(1.02);
+	}
+	45% {
+		transform: translate3d(60vw, 42vh, 0) scale(1.1);
+	}
+	70% {
+		transform: translate3d(-48vw, 54vh, 0) scale(0.96);
+	}
+	100% {
+		transform: translate3d(-65vw, -52vh, 0) scale(0.9);
+	}
+}
+
+@keyframes blob-orbit {
+	0% {
+		transform: translate3d(-46vw, -42vh, 0) scale(0.92);
+	}
+	25% {
+		transform: translate3d(50vw, -50vh, 0) scale(1.03);
+	}
+	50% {
+		transform: translate3d(64vw, 16vh, 0) scale(1.08);
+	}
+	75% {
+		transform: translate3d(-42vw, 50vh, 0) scale(0.98);
+	}
+	100% {
+		transform: translate3d(-46vw, -42vh, 0) scale(0.92);
+	}
+}

@@ -27,10 +27,11 @@
 		"jsonc",
 		"json5"
 	],
+	"html.autoClosingTags": true,
 	"oxc.configPath": ".oxlintrc.json",
 	"oxc.fixKind": "all",
 	"oxc.fmt.configPath": ".oxfmtrc.json",
 	"prettier.configPath": ".prettierrc.json",
 	"prettier.prettierPath": "./node_modules/prettier/index.cjs",
-	"stylelint.validate": ["css"]
+	"stylelint.validate": ["css", "astro"]
 }

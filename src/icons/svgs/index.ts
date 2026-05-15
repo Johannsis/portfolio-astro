@@ -1,6 +1,6 @@
 import type { AstroIconComponent, IconProps } from '@jh/icons/constants/types';
 
-export default {
+const Icons = {
 	arrowRight: (): Promise<{ default: AstroIconComponent<IconProps> }> =>
 		import('./arrowRight.astro'),
 	github: (): Promise<{ default: AstroIconComponent<IconProps> }> =>
@@ -10,3 +10,5 @@ export default {
 	mail: (): Promise<{ default: AstroIconComponent<IconProps> }> =>
 		import('./mail.astro'),
 };
+
+export default Icons;

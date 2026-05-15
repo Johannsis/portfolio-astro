@@ -1,7 +1,6 @@
 ---
-// oxlint-disable unicorn/prefer-module
-import type { IconNames } from './constants/iconNames';
-import svgs from './svgs';
+import type { IconNames } from './constants/types';
+import Icons from './svgs';
 
 interface Props {
 	'aria-hidden'?: boolean;
@@ -27,7 +26,8 @@ const {
 
 const heightValue = size || height;
 const widthValue = size || width;
-const Icon = svgs[iconName];
+
+const Icon = Icons[iconName];
 
 if (!Icon) return null;
 

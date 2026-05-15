@@ -3,6 +3,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 import UnoCSS from 'unocss/astro';
 
 export default defineConfig({
+	base: '/portfolio-astro',
 	devToolbar: {
 		enabled: false,
 	},

@@ -6,6 +6,7 @@ import { userData } from '@jh/data/user';
 import Icon from '@jh/icons/index.astro';
 
 const { experience } = userData;
+const resumeHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/assets/Johannes-Hoersch-CV.pdf`;
 ---
 
 <Section ariaLabel='Work experience' id='experience'>
@@ -18,7 +19,7 @@ const { experience } = userData;
 	<a
 		aria-label='View Full Resume (opens PDF in new tab)'
 		class='text-primary-80 hover:text-primary-100 mt-4 flex items-center gap-2 fill-current font-semibold transition-colors duration-200 ease-in-out lg:p-4'
-		href='/assets/Johannes-Hoersch-CV.pdf'
+		href={resumeHref}
 		rel='noopener noreferrer'
 		target='_blank'
 	>

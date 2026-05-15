@@ -6,7 +6,7 @@ import { userData } from '@jh/data/user';
 import Icon from '@jh/icons/index.astro';
 
 const { experience } = userData;
-const resumeHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/assets/Johannes-Hoersch-CV.pdf`;
+const resumeHref = `${import.meta.env.BASE_URL.replace(/\/$/u, '')}/assets/Johannes-Hoersch-CV.pdf`;
 ---
 
 <Section ariaLabel='Work experience' id='experience'>

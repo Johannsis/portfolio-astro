@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Johannsis/portfolio-astro/compare/v1.1.0...v1.1.1) (2026-05-15)
+
+
+### Bug Fixes
+
+* Use u flag for Regex ([c71ad1d](https://github.com/Johannsis/portfolio-astro/commit/c71ad1d2d80e6721189fa9f549108651085370ac))
+
 # [1.1.0](https://github.com/Johannsis/portfolio-astro/compare/v1.0.0...v1.1.0) (2026-05-15)
 
 

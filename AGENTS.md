@@ -40,15 +40,15 @@ bun run astro:preview        # Serve the production build locally
 
 ## Stack
 
-| Layer           | Technology                   | Version  |
-| --------------- | ---------------------------- | -------- |
-| Framework       | Astro                        | ^6.3.1   |
-| Language        | TypeScript (strict)          | ^6.0.3   |
-| Styling         | UnoCSS                       | ^66.6.8  |
-| Package manager | Bun                          | ^1.3.10  |
-| Deployment      | GitHub Pages (static output) | —        |
-| Linter          | oxlint                       | ^1.64.0  |
-| Formatter       | oxfmt + Prettier             | ^0.49.0  |
+| Layer           | Technology                   | Version |
+| --------------- | ---------------------------- | ------- |
+| Framework       | Astro                        | ^6.3.1  |
+| Language        | TypeScript (strict)          | ^6.0.3  |
+| Styling         | UnoCSS                       | ^66.6.8 |
+| Package manager | Bun                          | ^1.3.10 |
+| Deployment      | GitHub Pages (static output) | —       |
+| Linter          | oxlint                       | ^1.64.0 |
+| Formatter       | oxfmt + Prettier             | ^0.49.0 |
 
 Import alias: `@jh/*` maps to `src/*`.
 
@@ -158,16 +158,16 @@ oxfmt auto-sorts imports. Run `bun run format` to fix import order automatically
 
 ## Boundaries — Never Touch
 
-| Area                             | Rule                                                                      |
-| -------------------------------- | ------------------------------------------------------------------------- |
-| `bun.lock`                       | Never edit manually — use `bun add` / `bun remove`                        |
-| `src/data/user.ts`               | Portfolio content only — no logic                                         |
-| `src/styles/global.css`          | Only add to existing layers; do not reorder `@layer` blocks               |
-| `.github/workflows/deploy.yml`   | Do not modify the deployment pipeline                                     |
-| `.env*` files                    | Never commit secrets or API keys                                          |
-| `public/`                        | Static assets only; no generated or build artifacts                       |
-| `astro.config.mjs`               | `site`, `base`, and `output` must stay intact for GitHub Pages            |
-| `dist/` and `.astro/`            | Generated output — never edit manually                                    |
+| Area                           | Rule                                                           |
+| ------------------------------ | -------------------------------------------------------------- |
+| `bun.lock`                     | Never edit manually — use `bun add` / `bun remove`             |
+| `src/data/user.ts`             | Portfolio content only — no logic                              |
+| `src/styles/global.css`        | Only add to existing layers; do not reorder `@layer` blocks    |
+| `.github/workflows/deploy.yml` | Do not modify the deployment pipeline                          |
+| `.env*` files                  | Never commit secrets or API keys                               |
+| `public/`                      | Static assets only; no generated or build artifacts            |
+| `astro.config.mjs`             | `site`, `base`, and `output` must stay intact for GitHub Pages |
+| `dist/` and `.astro/`          | Generated output — never edit manually                         |
 
 ---
 
@@ -204,14 +204,14 @@ const { class: className, label, variant = 'primary' } = Astro.props;
 ```ts
 // src/data/user.ts — add a new project
 export const userData = {
-  // ...existing fields...
-  projects: [
-    {
-      description: 'Open-source design system built with Astro and UnoCSS.',
-      name: 'Design System',
-      stack: ['Astro', 'TypeScript', 'UnoCSS'],
-      url: 'https://github.com/Johannsis/design-system',
-    },
-  ],
+	// ...existing fields...
+	projects: [
+		{
+			description: 'Open-source design system built with Astro and UnoCSS.',
+			name: 'Design System',
+			stack: ['Astro', 'TypeScript', 'UnoCSS'],
+			url: 'https://github.com/Johannsis/design-system',
+		},
+	],
 };
 ```

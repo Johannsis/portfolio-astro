@@ -10,7 +10,6 @@
 			}
 		}
 	],
-	"prettier": { "allowed": false },
 	"language_servers": ["!eslint", "!typescript-language-server", "..."],
 	"languages": {
 		"Astro": {
@@ -62,5 +61,6 @@
 				}
 			}
 		}
-	}
+	},
+	"prettier": { "allowed": false }
 }

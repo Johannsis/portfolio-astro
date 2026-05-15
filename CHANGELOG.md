@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Johannsis/portfolio-astro/compare/v1.0.0...v1.1.0) (2026-05-15)
+
+
+### Features
+
+* update releaserc ([dfe72d3](https://github.com/Johannsis/portfolio-astro/commit/dfe72d377fa5c5515a80eefd5acbd73ddaae77fd))
+
 # 1.0.0 (2026-05-15)
 
 

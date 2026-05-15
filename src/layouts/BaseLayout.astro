@@ -18,15 +18,15 @@ const { description, jsonLd, keywords, siteName, siteUrl, title } = Astro.props;
 
 <html class='bg-primary-10 scroll-smooth' lang='en'>
 	<head>
+		<meta charset='utf-8' />
 		<Font
 			cssVariable='--font-montserrat'
 			preload={[{ style: 'normal', subset: 'latin' }]}
 		/>
-		<meta charset='utf-8' />
+		<title>{title}</title>
 		<meta content='width=device-width, initial-scale=1' name='viewport' />
 		<meta content={Astro.generator} name='generator' />
 		<meta content='#0d1117' name='theme-color' />
-		<title>{title}</title>
 		<meta content={title} property='og:title' />
 		<meta content={description} name='description' />
 		<meta content={keywords.join(', ')} name='keywords' />
@@ -38,7 +38,8 @@ const { description, jsonLd, keywords, siteName, siteUrl, title } = Astro.props;
 		<meta content='summary' name='twitter:card' />
 		<meta content={title} name='twitter:title' />
 		<meta content={description} name='twitter:description' />
-		<link href='/images/favicon.ico' rel='icon' type='image/x-icon' />
+		<link href='/sitemap-index.xml' rel='sitemap' />
+		<link href='/favicon.ico' rel='icon' type='image/x-icon' />
 		<link
 			href='/images/apple-touch-icon.png'
 			rel='apple-touch-icon'

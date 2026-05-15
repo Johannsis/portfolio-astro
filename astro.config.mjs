@@ -33,7 +33,18 @@ export default defineConfig({
 		syntaxHighlight: 'prism',
 	},
 	security: {
-		csp: true,
+		csp: {
+			algorithm: 'SHA-512',
+			directives: ["default-src 'self'"],
+			scriptDirective: {
+				resources: ["'self'"],
+				strictDynamic: false,
+			},
+			styleDirective: {
+				hashes: ['sha256-Yr0h/iwIuglsEgZPNO9J3lgYRyLvgYPx9+n6yRedyqs='],
+				resources: ["'self'", "'unsafe-hashes'"],
+			},
+		},
 	},
 	site: 'https://johannsis.github.io/portfolio',
 });

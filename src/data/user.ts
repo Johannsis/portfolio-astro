@@ -14,7 +14,39 @@ export interface SocialLink {
 	url: string;
 }
 
+export const currentYear = new Date().getFullYear();
+
+export const title = 'Johannes Hoersch | Senior Front-End Developer';
+
+export const description =
+	'Johannes Hoersch — Senior Front-End Developer based in Santo Domingo, DR. Building fast, accessible, and beautiful digital experiences with Next.js, React, and TypeScript.';
+
+export const keywords = [
+	'Software Engineer',
+	'Front-End Developer',
+	'React',
+	'Next.js',
+	'TypeScript',
+	'Johannes Hoersch',
+];
+
 export const siteUrl = 'https://johannsis.github.io/portfolio';
+
+export const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	jobTitle: 'Senior Front-End Developer',
+	name: 'Johannes Hoersch',
+	sameAs: [
+		'https://github.com/Johannsis',
+		'https://www.linkedin.com/in/johanneshoersch/',
+	],
+	url: siteUrl,
+	worksFor: {
+		'@type': 'Organization',
+		name: 'TelevisaUnivision',
+	},
+};
 
 export const pageSections = ['about', 'experience'] as const;
 

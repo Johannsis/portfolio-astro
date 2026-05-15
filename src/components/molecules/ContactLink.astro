@@ -1,5 +1,5 @@
 ---
-import Icon from '@jh/components/atoms/Icon.astro';
+import Icon from '@jh/icons/index.astro';
 
 interface Props {
 	ariaLabel: string;
@@ -11,13 +11,18 @@ const { ariaLabel, icon, url } = Astro.props;
 const target = url.startsWith('mailto:') ? null : '_blank';
 ---
 
-<a
-	aria-label={ariaLabel}
-	class='text-primary-80 hover:text-primary-100 duration-300 ease-out hover:scale-110'
-	href={url}
-	referrerpolicy='no-referrer'
-	rel='noopener noreferrer'
-	target={target}
+<nav
+	aria-label='Contact links'
+	class='flex h-fit flex-row gap-5 lg:relative lg:mb-36'
 >
-	<Icon name={icon} />
-</a>
+	<a
+		aria-label={ariaLabel}
+		class='text-primary-80 hover:text-primary-100 duration-300 ease-out hover:scale-110'
+		href={url}
+		referrerpolicy='no-referrer'
+		rel='noopener noreferrer'
+		target={target}
+	>
+		<Icon aria-hidden className='fill-current' iconName={icon} size={24} />
+	</a>
+</nav>

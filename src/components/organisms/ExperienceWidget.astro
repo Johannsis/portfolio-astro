@@ -1,9 +1,9 @@
 ---
-import Icon from '@jh/components/atoms/Icon.astro';
 import Section from '@jh/components/atoms/Section.astro';
 import SectionTitle from '@jh/components/atoms/SectionTitle.astro';
 import ExperienceCard from '@jh/components/molecules/ExperienceCard.astro';
 import type { ExperienceEntry } from '@jh/data/user';
+import Icon from '@jh/icons/index.astro';
 
 interface Props {
 	experience: ExperienceEntry[];
@@ -27,6 +27,11 @@ const { experience } = Astro.props;
 		target='_blank'
 	>
 		<span class='body-md font-medium'>View Full Resume</span>
-		<Icon name='arrowRight' />
+		<Icon
+			aria-hidden
+			className='fill-current'
+			iconName='arrowRight'
+			size={20}
+		/>
 	</a>
 </Section>

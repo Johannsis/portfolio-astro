@@ -46,5 +46,5 @@ export default defineConfig({
 			},
 		},
 	},
-	site: 'https://johannsis.github.io/portfolio',
+	site: 'https://johannsis.github.io/portfolio-astro',
 });

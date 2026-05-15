@@ -21,7 +21,7 @@ export interface SocialLink {
 	url: string;
 }
 
-export const siteUrl = 'https://johannsis.github.io/portfolio';
+export const siteUrl = 'https://johannsis.github.io/portfolio-astro';
 
 export const pageSections = ['about', 'experience'] as const;
 

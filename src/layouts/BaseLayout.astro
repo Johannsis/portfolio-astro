@@ -2,18 +2,15 @@
 /* eslint-disable astro/no-set-html-directive */
 import { Font } from 'astro:assets';
 
+import {
+	description,
+	jsonLd,
+	keywords,
+	siteName,
+	siteUrl,
+	title,
+} from '@jh/data/user';
 import '@jh/styles/global.css';
-
-interface Props {
-	description: string;
-	jsonLd: Record<string, unknown>;
-	keywords: string[];
-	siteName: string;
-	siteUrl: string;
-	title: string;
-}
-
-const { description, jsonLd, keywords, siteName, siteUrl, title } = Astro.props;
 ---
 
 <html class='bg-primary-10 scroll-smooth' lang='en'>

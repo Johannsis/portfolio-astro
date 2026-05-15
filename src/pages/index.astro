@@ -5,47 +5,10 @@ import ExperienceWidget from '@jh/components/organisms/ExperienceWidget.astro';
 import Footer from '@jh/components/organisms/Footer.astro';
 import Header from '@jh/components/organisms/Header.astro';
 import MouseLight from '@jh/components/organisms/MouseLight.astro';
-import { pageSections, siteUrl, userData } from '@jh/data/user';
 import BaseLayout from '@jh/layouts/BaseLayout.astro';
-
-const currentYear = new Date().getFullYear();
-const title = 'Johannes Hoersch | Senior Front-End Developer';
-const description =
-	'Johannes Hoersch — Senior Front-End Developer based in Santo Domingo, DR. Building fast, accessible, and beautiful digital experiences with Next.js, React, and TypeScript.';
-const keywords = [
-	'Software Engineer',
-	'Front-End Developer',
-	'React',
-	'Next.js',
-	'TypeScript',
-	'Johannes Hoersch',
-];
-
-const jsonLd = {
-	'@context': 'https://schema.org',
-	'@type': 'Person',
-	jobTitle: 'Senior Front-End Developer',
-	name: 'Johannes Hoersch',
-	sameAs: [
-		'https://github.com/Johannsis',
-		'https://www.linkedin.com/in/johanneshoersch/',
-	],
-	url: siteUrl,
-	worksFor: {
-		'@type': 'Organization',
-		name: 'TelevisaUnivision',
-	},
-};
 ---
 
-<BaseLayout
-	description={description}
-	jsonLd={jsonLd}
-	keywords={keywords}
-	siteName='Johannes Hoersch Portfolio'
-	siteUrl={siteUrl}
-	title={title}
->
+<BaseLayout>
 	<div
 		class='bg-primary-10 text-primary-80 relative flex min-h-dvh w-full min-w-min grow flex-col px-6 py-12 antialiased transition-colors duration-500 ease-in-out md:px-12 lg:px-24'
 	>
@@ -53,22 +16,15 @@ const jsonLd = {
 		<div
 			class='z-10 flex min-h-full max-w-7xl flex-col gap-6 self-center lg:flex-row'
 		>
-			<Header
-				job={userData.job}
-				location={userData.location}
-				motto={userData.motto}
-				name={userData.name}
-				pageSections={pageSections}
-				socialLinks={userData.social}
-			/>
+			<Header />
 			<main
 				class='mx-auto my-0 flex w-full grow flex-col gap-16 py-0 lg:mr-0 lg:max-w-[calc(60%-0.75rem)]'
 			>
 				<AboutWidget />
-				<ExperienceWidget experience={userData.experience} />
+				<ExperienceWidget />
 			</main>
 		</div>
-		<Footer currentYear={currentYear} />
+		<Footer />
 	</div>
 	<MouseLight />
 </BaseLayout>

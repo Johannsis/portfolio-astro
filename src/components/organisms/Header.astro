@@ -1,18 +1,9 @@
 ---
 import ContactLinks from '@jh/components/molecules/ContactLinks.astro';
 import HeaderSections from '@jh/components/molecules/HeaderSections.astro';
-import type { SocialLink } from '@jh/data/user';
+import { userData } from '@jh/data/user';
 
-interface Props {
-	job: string;
-	location: string;
-	motto: string;
-	name: string;
-	pageSections: readonly string[];
-	socialLinks: SocialLink[];
-}
-
-const { job, location, motto, name, pageSections, socialLinks } = Astro.props;
+const { job, location, motto, name } = userData;
 ---
 
 <header
@@ -35,6 +26,6 @@ const { job, location, motto, name, pageSections, socialLinks } = Astro.props;
 		</p>
 	</div>
 
-	<HeaderSections pageSections={pageSections} />
-	<ContactLinks socialLinks={socialLinks} />
+	<HeaderSections />
+	<ContactLinks />
 </header>

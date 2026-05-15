@@ -7,6 +7,13 @@ export interface ExperienceEntry {
 	url: string;
 }
 
+export interface ProjectEntry {
+	description: string;
+	name: string;
+	stack: string[];
+	url: string;
+}
+
 export interface SocialLink {
 	ariaLabel: string;
 	icon: 'github' | 'linkedin' | 'mail';
@@ -14,9 +21,15 @@ export interface SocialLink {
 	url: string;
 }
 
-export const currentYear = new Date().getFullYear();
+export const siteUrl = 'https://johannsis.github.io/portfolio';
+
+export const pageSections = ['about', 'experience'] as const;
+
+export type PageSection = (typeof pageSections)[number];
 
 export const title = 'Johannes Hoersch | Senior Front-End Developer';
+
+export const siteName = 'Johannes Hoersch Portfolio';
 
 export const description =
 	'Johannes Hoersch — Senior Front-End Developer based in Santo Domingo, DR. Building fast, accessible, and beautiful digital experiences with Next.js, React, and TypeScript.';
@@ -29,8 +42,6 @@ export const keywords = [
 	'TypeScript',
 	'Johannes Hoersch',
 ];
-
-export const siteUrl = 'https://johannsis.github.io/portfolio';
 
 export const jsonLd = {
 	'@context': 'https://schema.org',
@@ -47,8 +58,6 @@ export const jsonLd = {
 		name: 'TelevisaUnivision',
 	},
 };
-
-export const pageSections = ['about', 'experience'] as const;
 
 export const userData = {
 	experience: [
@@ -109,12 +118,13 @@ export const userData = {
 			],
 			url: 'https://www.tevolv.com/',
 		},
-	] satisfies ExperienceEntry[],
+	] as ExperienceEntry[],
 	job: 'Senior Front-End Developer',
 	location: 'Santo Domingo, DR',
 	motto:
 		'I build fast, maintainable, pretty and reliable digital experiences for the web.',
 	name: 'Johannes Hoersch',
+	projects: [] as ProjectEntry[],
 	social: [
 		{
 			ariaLabel: 'Send an email to Johannes Hoersch',

@@ -1,13 +1,9 @@
 ---
-import type { SocialLink } from '@jh/data/user';
+import { userData } from '@jh/data/user';
 
 import ContactLink from './ContactLink.astro';
 
-interface Props {
-	socialLinks: SocialLink[];
-}
-
-const { socialLinks } = Astro.props;
+const { social: socialLinks } = userData;
 ---
 
 <nav

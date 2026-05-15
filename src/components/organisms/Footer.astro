@@ -1,9 +1,5 @@
 ---
-interface Props {
-	currentYear: number;
-}
-
-const { currentYear } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class='text-primary-100 z-10 mt-12 max-w-7xl self-center'>

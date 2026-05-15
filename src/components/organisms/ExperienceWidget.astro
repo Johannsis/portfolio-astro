@@ -2,14 +2,10 @@
 import Section from '@jh/components/atoms/Section.astro';
 import SectionTitle from '@jh/components/atoms/SectionTitle.astro';
 import ExperienceCard from '@jh/components/molecules/ExperienceCard.astro';
-import type { ExperienceEntry } from '@jh/data/user';
+import { userData } from '@jh/data/user';
 import Icon from '@jh/icons/index.astro';
 
-interface Props {
-	experience: ExperienceEntry[];
-}
-
-const { experience } = Astro.props;
+const { experience } = userData;
 ---
 
 <Section ariaLabel='Work experience' id='experience'>

@@ -1,4 +1,5 @@
 :root {
+	color-scheme: dark;
 	--aurora-amber: color-mix(
 		in oklab,
 		var(--color-secondary-90) 24%,
